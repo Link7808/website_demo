@@ -27,11 +27,10 @@
   <script>
     (function () {
       const key = 'pas-theme';
-      const choice = ['light', 'dark', 'system'].includes(localStorage.getItem(key))
+      const choice = ['light', 'dark'].includes(localStorage.getItem(key))
         ? localStorage.getItem(key)
-        : 'system';
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = choice === 'system' ? (prefersDark ? 'dark' : 'light') : choice;
+        : 'light';
+      const theme = choice;
       document.documentElement.dataset.theme = theme;
       document.documentElement.dataset.themeChoice = choice;
       document.documentElement.style.colorScheme = theme;
@@ -39,7 +38,7 @@
   </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="styles/css/reset.css">
-  <link rel="stylesheet" href="styles/css/main.css">
+  <link rel="stylesheet" href="styles/css/main.css?v=layout-spacing-polish">
   <link rel="stylesheet" href="styles/css/animations.css">
   <link rel="stylesheet" href="styles/css/responsive.css">
   <!-- Google Fonts -->
@@ -65,7 +64,7 @@
 
     /* Sponsor links hover ring and image radius */
     .sponsors-logos a {
-      border-radius: 12px;
+      border-radius: 16px;
       padding: 6px;
       display: inline-flex;
       align-items: center;
@@ -78,7 +77,7 @@
     }
 
     .sponsors-logos a img {
-      border-radius: 10px;
+      border-radius: 14px;
       display: block;
     }
 
@@ -116,6 +115,7 @@
         <a class="nav-link scrollto" href="#organizers">Organizers</a>
         <a class="nav-link scrollto" href="#committee">Program Committee</a>
         <a class="nav-link scrollto" href="#support-team">Contact</a>
+        <a class="nav-link scrollto" href="#sponsors">Community Support</a>
       </nav>
       <div class="theme-switcher" role="group" aria-label="Theme">
         <button class="theme-option" type="button" data-theme-option="light" aria-pressed="false" title="Light theme">
@@ -125,10 +125,6 @@
         <button class="theme-option" type="button" data-theme-option="dark" aria-pressed="false" title="Dark theme">
           <i class="bi bi-moon-stars" aria-hidden="true"></i>
           <span>Dark</span>
-        </button>
-        <button class="theme-option" type="button" data-theme-option="system" aria-pressed="false" title="Follow browser theme">
-          <i class="bi bi-laptop" aria-hidden="true"></i>
-          <span>System</span>
         </button>
       </div>
     </div>
@@ -142,8 +138,8 @@
         <span class="display-text-palatino">Personal Agent Systems (PAS)</span>
       </div>
       <br>
-      <div class="container" style="position:relative;z-index:1;">
-        <h3 class="hero-pill">
+      <div class="container hero-badge-container" style="position:relative;z-index:1;">
+        <h3 class="hero-pill hero-workshop-badge">
           NeurIPS 2026 Workshop</h3>
       </div>
     </section>
@@ -279,7 +275,7 @@
         <div class="organizers-grid">
           <a href="https://jindonggu.github.io/" target="_blank" class="organizer-card" style="position: relative;">
             <div class="organizer-role">Confirmed</div>
-            <div class="initial-avatar">JG</div>
+            <img src="./public/jindong-gu.jpg" alt="Jindong Gu" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Jindong Gu</div>
               <div class="organizer-org">Google DeepMind & University of Oxford</div>
@@ -288,7 +284,7 @@
 
           <a href="https://ikekonglp.github.io/" target="_blank" class="organizer-card" style="position: relative;">
             <div class="organizer-role">Confirmed</div>
-            <div class="initial-avatar">LK</div>
+            <img src="./public/speaker-lingpeng-kong.jpg" alt="Lingpeng Kong" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Lingpeng Kong</div>
               <div class="organizer-org">The University of Hong Kong</div>
@@ -297,7 +293,7 @@
 
           <a href="https://yumeng5.github.io/" target="_blank" class="organizer-card" style="position: relative;">
             <div class="organizer-role">Confirmed</div>
-            <div class="initial-avatar">YM</div>
+            <img src="./public/yu-meng.jpg" alt="Yu Meng" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Yu Meng</div>
               <div class="organizer-org">University of Virginia</div>
@@ -312,6 +308,15 @@
               <div class="organizer-org">Meta Superintelligence Labs & Duke University</div>
             </div>
           </a>
+
+          <div class="organizer-card" style="position: relative;">
+            <div class="organizer-role">Confirmed</div>
+            <img src="./public/kejing-xia.jpeg" alt="Kejing Xia" class="organizer-photo">
+            <div class="organizer-info">
+              <div class="organizer-name">Kejing Xia</div>
+              <div class="organizer-org">Georgia Institute of Technology</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -326,33 +331,92 @@
           </div>
         </div>
         <p>The workshop is planned as a one-day, in-person NeurIPS 2026 event spanning 8.5 hours. The program is designed to move beyond a talks-only format by combining invited talks, contributed oral sessions, posters, demos, structured discussion, and a panel.</p>
-        <div class="schedule-table">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Time</th>
-                <th scope="col">Duration</th>
-                <th scope="col">Session</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>09:00-09:10</td><td>10 min</td><td>Opening remarks and workshop goals</td></tr>
-              <tr><td>09:10-09:40</td><td>30 min</td><td>Invited talk 1: Foundations of personal agents</td></tr>
-              <tr><td>09:40-10:10</td><td>30 min</td><td>Invited talk 2: Safe and trustworthy agent systems</td></tr>
-              <tr><td>10:10-10:30</td><td>20 min</td><td>Coffee break</td></tr>
-              <tr><td>10:30-11:20</td><td>50 min</td><td>Contributed oral session 1</td></tr>
-              <tr><td>11:20-12:00</td><td>40 min</td><td>Structured discussion: What should personal agents remember?</td></tr>
-              <tr><td>12:00-13:00</td><td>60 min</td><td>Lunch break</td></tr>
-              <tr><td>13:00-13:30</td><td>30 min</td><td>Invited talk 3: Personalization and human-agent interaction</td></tr>
-              <tr><td>13:30-14:20</td><td>50 min</td><td>Poster session 1 and demos</td></tr>
-              <tr><td>14:20-15:10</td><td>50 min</td><td>Contributed oral session 2</td></tr>
-              <tr><td>15:10-15:30</td><td>20 min</td><td>Coffee break</td></tr>
-              <tr><td>15:30-16:00</td><td>30 min</td><td>Invited talk 4: Infrastructure for deployable agents</td></tr>
-              <tr><td>16:00-16:45</td><td>45 min</td><td>Panel and audience debate: Personal agents in the real world</td></tr>
-              <tr><td>16:45-17:20</td><td>35 min</td><td>Poster session 2 and breakout reports</td></tr>
-              <tr><td>17:20-17:30</td><td>10 min</td><td>Awards and closing remarks</td></tr>
-            </tbody>
-          </table>
+        <div class="schedule-timeline" aria-label="Workshop schedule">
+          <div class="schedule-timeline-header" aria-hidden="true">
+            <div>Duration</div>
+            <div></div>
+            <div class="schedule-timeline-heading-stack">
+              <span>Time</span>
+              <span>Session</span>
+            </div>
+          </div>
+          <div class="schedule-timeline-list">
+            <div class="schedule-timeline-row first">
+              <div class="schedule-duration">10 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">09:00 - 09:10</div><div class="schedule-entry-session">Opening remarks and workshop goals</div></div>
+            </div>
+            <div class="schedule-timeline-row">
+              <div class="schedule-duration">30 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">09:10 - 09:40</div><div class="schedule-entry-session">Invited talk 1: Foundations of personal agents</div></div>
+            </div>
+            <div class="schedule-timeline-row">
+              <div class="schedule-duration">30 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">09:40 - 10:10</div><div class="schedule-entry-session">Invited talk 2: Safe and trustworthy agent systems</div></div>
+            </div>
+            <div class="schedule-timeline-row">
+              <div class="schedule-duration">20 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">10:10 - 10:30</div><div class="schedule-entry-session">Coffee break</div></div>
+            </div>
+            <div class="schedule-timeline-row">
+              <div class="schedule-duration">50 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">10:30 - 11:20</div><div class="schedule-entry-session">Contributed oral session 1</div></div>
+            </div>
+            <div class="schedule-timeline-row">
+              <div class="schedule-duration">40 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">11:20 - 12:00</div><div class="schedule-entry-session">Structured discussion: What should personal agents remember?</div></div>
+            </div>
+            <div class="schedule-timeline-row">
+              <div class="schedule-duration">60 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">12:00 - 13:00</div><div class="schedule-entry-session">Lunch break</div></div>
+            </div>
+            <div class="schedule-timeline-row">
+              <div class="schedule-duration">30 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">13:00 - 13:30</div><div class="schedule-entry-session">Invited talk 3: Personalization and human-agent interaction</div></div>
+            </div>
+            <div class="schedule-timeline-row">
+              <div class="schedule-duration">50 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">13:30 - 14:20</div><div class="schedule-entry-session">Poster session 1 and demos</div></div>
+            </div>
+            <div class="schedule-timeline-row">
+              <div class="schedule-duration">50 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">14:20 - 15:10</div><div class="schedule-entry-session">Contributed oral session 2</div></div>
+            </div>
+            <div class="schedule-timeline-row">
+              <div class="schedule-duration">20 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">15:10 - 15:30</div><div class="schedule-entry-session">Coffee break</div></div>
+            </div>
+            <div class="schedule-timeline-row">
+              <div class="schedule-duration">30 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">15:30 - 16:00</div><div class="schedule-entry-session">Invited talk 4: Infrastructure for deployable agents</div></div>
+            </div>
+            <div class="schedule-timeline-row">
+              <div class="schedule-duration">45 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">16:00 - 16:45</div><div class="schedule-entry-session">Panel and audience debate: Personal agents in the real world</div></div>
+            </div>
+            <div class="schedule-timeline-row">
+              <div class="schedule-duration">35 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">16:45 - 17:20</div><div class="schedule-entry-session">Poster session 2 and breakout reports</div></div>
+            </div>
+            <div class="schedule-timeline-row last">
+              <div class="schedule-duration">10 min</div>
+              <div class="schedule-rail"><span></span></div>
+              <div class="schedule-entry"><div class="schedule-entry-time">17:20 - 17:30</div><div class="schedule-entry-session">Awards and closing remarks</div></div>
+            </div>
+          </div>
         </div>
         <p style="margin-top: 1.5rem;"><a href="schedule.html"><strong>View the standalone schedule page</strong></a></p>
       </div>
@@ -538,7 +602,7 @@
         <p>The program committee brings together researchers across computer vision, NLP, reinforcement learning, LLM agents, human-centered AI, systems, privacy, and trustworthy deployment.</p>
         <div class="organizers-grid pc-grid">
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">LB</div>
+            <img src="./public/lingfan-bao.jpeg" alt="Lingfan Bao" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Lingfan Bao</div>
               <div class="organizer-org">University College London</div>
@@ -546,7 +610,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">HC</div>
+            <img src="./public/hei-ting-chan.jpeg" alt="Hei Ting Chan" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Hei Ting Chan</div>
               <div class="organizer-org">University of Michigan</div>
@@ -562,7 +626,7 @@
           </a>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">KG</div>
+            <img src="./public/kunxiao-gao.jpeg" alt="Kunxiao Gao" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Kunxiao Gao</div>
               <div class="organizer-org">University of Michigan</div>
@@ -570,7 +634,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">QH</div>
+            <img src="./public/qi-han.png" alt="Qi Han" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Qi Han</div>
               <div class="organizer-org">University of Hong Kong</div>
@@ -578,7 +642,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">SH</div>
+            <img src="./public/shuai-he.jpg" alt="Shuai He" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Shuai He</div>
               <div class="organizer-org">University of Maryland</div>
@@ -586,7 +650,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">YH</div>
+            <img src="./public/yunta-hsieh.jpeg" alt="Yunta Hsieh" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Yunta Hsieh</div>
               <div class="organizer-org">University of Michigan</div>
@@ -594,7 +658,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">TH</div>
+            <img src="./public/tao-hu.jpeg" alt="Tao Hu" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Tao Hu</div>
               <div class="organizer-org">LMU Munich</div>
@@ -618,7 +682,7 @@
           </a>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">JL</div>
+            <img src="./public/jiarui-li.jpeg" alt="Jiarui Li" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Jiarui Li</div>
               <div class="organizer-org">University of Michigan</div>
@@ -650,7 +714,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">RL</div>
+            <img src="./public/ruiyao-liu.jpeg" alt="Ruiyao Liu" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Ruiyao Liu</div>
               <div class="organizer-org">Xi'an Jiaotong University</div>
@@ -674,7 +738,7 @@
           </a>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">JL</div>
+            <img src="./public/jiawei-lu.jpeg" alt="Jiawei Lu" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Jiawei Lu</div>
               <div class="organizer-org">University of Wisconsin-Madison</div>
@@ -682,7 +746,7 @@
           </div>
 
           <a href="https://yuanshengni.github.io/" target="_blank" class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/yuansheng-ni.png" alt="Yuansheng Ni" class="organizer-photo">
+            <img src="./public/yuansheng-ni.jpg" alt="Yuansheng Ni" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Yuansheng Ni</div>
               <div class="organizer-org">University of Waterloo</div>
@@ -690,7 +754,7 @@
           </a>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">MS</div>
+            <img src="./public/manxi-sun.jpeg" alt="Manxi Sun" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Manxi Sun</div>
               <div class="organizer-org">Tencent Robotics X</div>
@@ -698,7 +762,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">XT</div>
+            <img src="./public/xijia-tao.jpg" alt="Xijia Tao" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Xijia Tao</div>
               <div class="organizer-org">University of Hong Kong</div>
@@ -706,7 +770,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">ZW</div>
+            <img src="./public/zhongwei-wan.jpeg" alt="Zhongwei Wan" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Zhongwei Wan</div>
               <div class="organizer-org">Ohio State University</div>
@@ -714,7 +778,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">XW</div>
+            <img src="./public/xin-wang.jpeg" alt="Xin Wang" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Xin Wang</div>
               <div class="organizer-org">Ohio State University</div>
@@ -722,7 +786,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">JW</div>
+            <img src="./public/jizhou-wang.jpg" alt="Jizhou Wang" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Jizhou Wang</div>
               <div class="organizer-org">University of Toronto</div>
@@ -754,7 +818,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">TW</div>
+            <img src="./public/tianyu-wu.jpeg" alt="Tianyu Wu" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Tianyu Wu</div>
               <div class="organizer-org">Harvard University</div>
@@ -762,7 +826,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">KX</div>
+            <img src="./public/kejing-xia.jpeg" alt="Kejing Xia" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Kejing Xia</div>
               <div class="organizer-org">Georgia Institute of Technology</div>
@@ -778,7 +842,7 @@
           </a>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">JX</div>
+            <img src="./public/jing-xu.jpg" alt="Jing Xu" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Jing Xu</div>
               <div class="organizer-org">USTC</div>
@@ -786,7 +850,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">WX</div>
+            <img src="./public/wendong-xu.jpg" alt="Wendong Xu" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Wendong Xu</div>
               <div class="organizer-org">University of Hong Kong</div>
@@ -802,7 +866,7 @@
           </a>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">JZ</div>
+            <img src="./public/jingxuan-zhang.jpg" alt="Jingxuan Zhang" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Jingxuan Zhang</div>
               <div class="organizer-org">Indiana University</div>
@@ -818,7 +882,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">ZZ</div>
+            <img src="./public/ziheng-zhang.jpeg" alt="Ziheng Zhang" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Ziheng Zhang</div>
               <div class="organizer-org">Ohio State University</div>
@@ -826,7 +890,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">ZZ</div>
+            <img src="./public/zesen-zhao.jpeg" alt="Zesen Zhao" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Zesen Zhao</div>
               <div class="organizer-org">University of Michigan</div>
@@ -834,7 +898,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">BZ</div>
+            <img src="./public/boyuan-zheng.jpeg" alt="Boyuan Zheng" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Boyuan Zheng</div>
               <div class="organizer-org">University of Michigan</div>
@@ -842,7 +906,7 @@
           </div>
 
           <div class="organizer-card pc-card" style="position: relative;">
-            <div class="initial-avatar">RZ</div>
+            <img src="./public/ruiyang-zhu.jpg" alt="Ruiyang Zhu" class="organizer-photo">
             <div class="organizer-info">
               <div class="organizer-name">Ruiyang Zhu</div>
               <div class="organizer-org">University of Michigan</div>

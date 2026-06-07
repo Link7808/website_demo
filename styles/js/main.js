@@ -4,16 +4,15 @@
   "use strict";
 
   const themeStorageKey = 'pas-theme';
-  const themeChoices = ['light', 'dark', 'system'];
-  const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  const themeChoices = ['light', 'dark'];
 
   const getThemeChoice = () => {
     const storedTheme = localStorage.getItem(themeStorageKey);
-    return themeChoices.includes(storedTheme) ? storedTheme : 'system';
+    return themeChoices.includes(storedTheme) ? storedTheme : 'light';
   };
 
   const resolveTheme = (choice) => {
-    return choice === 'system' ? (colorSchemeQuery.matches ? 'dark' : 'light') : choice;
+    return themeChoices.includes(choice) ? choice : 'light';
   };
 
   const applyTheme = (choice) => {
@@ -39,12 +38,6 @@
         localStorage.setItem(themeStorageKey, currentChoice);
         applyTheme(currentChoice);
       });
-    });
-
-    colorSchemeQuery.addEventListener('change', () => {
-      if (getThemeChoice() === 'system') {
-        applyTheme('system');
-      }
     });
   };
 

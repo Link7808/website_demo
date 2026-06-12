@@ -1296,6 +1296,9 @@ html[data-theme="dark"] .schedule-rail span {
   margin-bottom: 0.78rem;
   border: 2px solid var(--color-primary);
 }
+.xueshen-liu-photo {
+  object-position: 23% 18%;
+}
 .initial-avatar {
   width: 74px;
   height: 74px;

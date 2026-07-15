@@ -4,26 +4,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PAS Workshop @ NeurIPS 2026</title>
-  <meta name="title" content="Personal Agent Systems Workshop @ NeurIPS 2026">
-  <meta name="description"
-    content="Foundations, infrastructure, and personalization for trustworthy personal AI agents.">
+  <title>GenAI4Health @ NeurIPS 2025</title>
+  <meta name="title" content="The Second Workshop on GenAI for Health @ NeurIPS 2025">
+  <meta name="description" content="The Second Workshop on GenAI for Health: Potential, Trust, and Policy Compliance at NeurIPS 2025.">
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pas-workshop.github.io">
-  <meta property="og:title" content="Personal Agent Systems Workshop @ NeurIPS 2026">
+  <meta property="og:url" content="https://genai4health.github.io">
+  <meta property="og:title" content="The Second Workshop on GenAI for Health @ NeurIPS 2025">
   <meta property="og:description"
-    content="Foundations, infrastructure, and personalization for trustworthy personal AI agents.">
-  <meta property="og:image" content="https://pas-workshop.github.io/images/thumbnail.png?v=2">
+    content="Potential, Trust, and Policy Compliance in Generative AI for Health.">
+  <meta property="og:image" content="public/genai-health-hero.png">
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://pas-workshop.github.io">
-  <meta name="twitter:title" content="Personal Agent Systems Workshop @ NeurIPS 2026">
+  <meta name="twitter:url" content="https://genai4health.github.io">
+  <meta name="twitter:title" content="The Second Workshop on GenAI for Health @ NeurIPS 2025">
   <meta name="twitter:description"
-    content="Foundations, infrastructure, and personalization for trustworthy personal AI agents.">
-  <meta name="twitter:image" content="https://pas-workshop.github.io/images/thumbnail.png?v=2">
+    content="Potential, Trust, and Policy Compliance in Generative AI for Health.">
+  <meta name="twitter:image" content="public/genai-health-hero.png">
   <!-- Canonical -->
-  <link rel="canonical" href="https://pas-workshop.github.io">
+  <link rel="canonical" href="https://genai4health.github.io">
   <script>
     (function () {
       const key = 'pas-theme';
@@ -104,18 +103,16 @@
         <a href="https://neurips.cc/" target="_blank" class="navbar-logo">
           <img src="images/neurips.svg" alt="NeurIPS_LOGO" style="width: 100%; height: 64px;">
         </a>
-        <a href="#home" class="navbar-title"
-          style="font-size: 1.5rem;color: var(--color-primary); font-weight: bold; font-family: 'Palatino', 'Palatino Linotype', serif; font-size: 1.5rem; display: flex; align-items: center; justify-content: flex-start; width: auto; gap: 1rem;">PAS
-          Workshop 2026</a>
+        <a href="#home" class="navbar-title" style="font-size: 1.5rem;color: var(--color-primary); font-weight: bold; font-family: 'Palatino', 'Palatino Linotype', serif; display: flex; align-items: center; justify-content: flex-start; width: auto; gap: 1rem;">GenAI4Health 2025</a>
       </div>
+      
       <nav id="navbar" class="navbar" style="display: flex; justify-content: flex-end;">
-        <a class="nav-link scrollto" href="#topics">Topics</a>
+
+        <a class="nav-link scrollto" href="#schedule">Agenda</a>
         <a class="nav-link scrollto" href="#call-for-papers">Call for Papers</a>
         <a class="nav-link scrollto" href="#speakers">Speakers</a>
-        <a class="nav-link scrollto" href="#schedule">Schedule</a>
         <a class="nav-link scrollto" href="#organizers">Organizers</a>
         <a class="nav-link scrollto" href="#committee">Program Committee</a>
-        <a class="nav-link scrollto" href="#support-team">Support Team</a>
         <a class="nav-link scrollto" href="#sponsors">Sponsors</a>
       </nav>
       <div class="theme-switcher" role="group" aria-label="Theme">
@@ -133,1003 +130,817 @@
 
   <main>
     <!-- Hero Section -->
-    <section id="home" class="hero fade-in" style="position:relative;overflow:hidden;">
-      <canvas id="waveCanvas" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;"></canvas>
+    <section id="home" class="hero health-hero fade-in">
+      <div class="health-hero-art" aria-hidden="true">
+        <svg class="health-illustration-source" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="presentation">
+          <defs>
+            <linearGradient id="healthWash" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fcfeff" />
+              <stop offset="0.56" stop-color="#eaf6ff" />
+              <stop offset="1" stop-color="#cdeaff" />
+            </linearGradient>
+            <radialGradient id="healthGlow" cx="50%" cy="44%" r="58%">
+              <stop offset="0" stop-color="#ffffff" stop-opacity="0.96" />
+              <stop offset="0.72" stop-color="#eff9ff" stop-opacity="0.52" />
+              <stop offset="1" stop-color="#c6e7fb" stop-opacity="0" />
+            </radialGradient>
+            <linearGradient id="panelStroke" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e5f6ff" stop-opacity="0.96" />
+              <stop offset="1" stop-color="#8bc8ef" stop-opacity="0.5" />
+            </linearGradient>
+            <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+          <rect width="1600" height="900" fill="url(#healthWash)" />
+          <rect width="1600" height="900" fill="url(#healthGlow)" />
+          <g class="health-network health-network-left">
+            <path d="M0 228 L125 270 L216 198 L302 266 L414 230 L510 322" />
+            <path d="M0 366 L108 336 L206 395 L312 344 L420 405 L530 352" />
+            <path d="M16 525 L126 464 L237 508 L338 450 L448 514 L560 468" />
+            <path d="M68 171 L126 270 L206 395 L237 508" />
+            <path d="M302 266 L312 344 L338 450" />
+            <path d="M414 230 L420 405 L448 514" />
+            <g class="health-nodes">
+              <circle cx="125" cy="270" r="7" /><circle cx="216" cy="198" r="5" />
+              <circle cx="302" cy="266" r="6" /><circle cx="206" cy="395" r="7" />
+              <circle cx="312" cy="344" r="5" /><circle cx="126" cy="464" r="6" />
+              <circle cx="338" cy="450" r="7" /><circle cx="448" cy="514" r="5" />
+            </g>
+          </g>
+          <g class="health-brain" filter="url(#softGlow)" transform="translate(42 66) scale(0.84)">
+            <path class="health-profile" d="M111 651 C88 611 80 562 92 514 C104 465 131 426 175 402 C220 377 275 380 316 410 C353 437 370 476 366 520 C364 545 374 563 394 578 L421 599 L416 622 L385 630 L385 661 L350 661 C342 708 313 742 266 756 L204 756 C170 731 141 698 111 651 Z" />
+            <path class="health-circuit" d="M148 500 C171 469 208 453 244 466 C279 478 299 511 293 546 C288 575 269 593 246 609 L246 704 M173 503 L173 598 L207 598 L207 692 M270 490 L270 531 L310 531 M132 558 L157 558 L157 648 L190 648" />
+            <path class="health-circuit" d="M181 479 L211 508 L245 480 L279 516 M147 581 L192 554 L237 579 L282 551" />
+            <g class="health-brain-nodes">
+              <circle cx="171" cy="496" r="5" /><circle cx="211" cy="506" r="5" />
+              <circle cx="246" cy="477" r="5" /><circle cx="281" cy="514" r="5" />
+              <circle cx="155" cy="556" r="5" /><circle cx="193" cy="552" r="5" />
+              <circle cx="239" cy="578" r="5" /><circle cx="286" cy="548" r="5" />
+              <circle cx="207" cy="692" r="5" /><circle cx="246" cy="704" r="5" />
+            </g>
+            <text x="211" y="558" text-anchor="middle">AI</text>
+          </g>
+          <g class="health-medical-icons">
+            <g class="health-icon health-icon-heart"><circle cx="116" cy="305" r="40" /><path d="M92 304 L104 304 L111 289 L121 323 L130 299 L143 299" /></g>
+            <g class="health-icon health-icon-dna"><circle cx="327" cy="326" r="38" /><path d="M314 302 C339 313 339 337 314 350 M340 302 C315 313 315 337 340 350 M318 310 L336 310 M318 321 L336 321 M318 333 L336 333 M318 343 L336 343" /></g>
+            <g class="health-icon health-icon-plus"><circle cx="79" cy="671" r="37" /><path d="M79 650 L79 692 M58 671 L100 671" /></g>
+            <g class="health-icon health-icon-pill"><circle cx="330" cy="734" r="37" /><path d="M313 748 C304 739 304 725 313 716 L324 705 C333 696 347 696 356 705 C365 714 365 728 356 737 L345 748 C336 757 322 757 313 748 Z M322 707 L353 738" /></g>
+          </g>
+          <g class="health-clinical-panel health-clinical-panel-top">
+            <rect x="1206" y="252" width="240" height="198" rx="20" /><rect x="1230" y="277" width="74" height="66" rx="9" />
+            <path class="health-plus-mark" d="M1267 291 L1267 329 M1248 310 L1286 310" /><rect x="1320" y="277" width="101" height="20" rx="5" /><rect x="1320" y="311" width="74" height="12" rx="5" />
+            <rect x="1230" y="360" width="91" height="15" rx="5" /><rect x="1230" y="389" width="137" height="12" rx="5" /><path class="health-shield" d="M1392 356 L1423 370 L1423 405 C1423 426 1409 440 1392 447 C1375 440 1361 426 1361 405 L1361 370 Z M1378 400 L1388 410 L1408 387" />
+          </g>
+          <g class="health-clinical-panel health-clinical-panel-bottom">
+            <rect x="1152" y="494" width="150" height="190" rx="18" /><path class="health-chart" d="M1175 626 L1175 542 L1280 542 M1186 606 L1201 583 L1217 594 L1237 560 L1253 576 L1273 550" /><rect x="1175" y="641" width="83" height="10" rx="5" /><rect x="1175" y="661" width="58" height="10" rx="5" />
+            <rect x="1324" y="494" width="130" height="151" rx="18" /><path class="health-lungs" d="M1389 520 C1363 525 1348 552 1349 590 L1349 612 C1370 612 1385 599 1389 578 M1389 520 C1415 525 1430 552 1429 590 L1429 612 C1408 612 1393 599 1389 578 M1389 520 L1389 607" />
+          </g>
+          <g class="health-network health-network-right">
+            <path d="M1458 227 L1537 214 L1600 267 M1445 338 L1515 371 L1600 342 M1450 495 L1526 460 L1600 513 M1466 625 L1533 670 L1600 633 M1515 371 L1526 460 L1533 670" />
+            <g class="health-nodes"><circle cx="1537" cy="214" r="6" /><circle cx="1515" cy="371" r="7" /><circle cx="1526" cy="460" r="5" /><circle cx="1533" cy="670" r="7" /><circle cx="1450" cy="495" r="6" /><circle cx="1466" cy="625" r="5" /></g>
+          </g>
+          <g class="health-projection" filter="url(#softGlow)"><ellipse cx="1354" cy="755" rx="198" ry="48" /><ellipse cx="1354" cy="755" rx="152" ry="35" /><ellipse cx="1354" cy="755" rx="106" ry="23" /><ellipse cx="1354" cy="755" rx="52" ry="11" /><path class="health-scan-line" d="M1354 716 L1354 544" /></g>
+          <g class="health-data-streams"><path d="M0 760 C220 670 344 835 542 745 S842 830 1038 735 S1330 824 1600 728" /><path d="M0 798 C210 712 355 862 547 780 S851 855 1044 770 S1354 856 1600 778" /><path d="M0 838 C188 755 368 878 570 816 S878 890 1080 807 S1372 887 1600 824" /></g>
+        </svg>
+        <svg class="health-wave-overlay" viewBox="0 0 1600 260" preserveAspectRatio="none" role="presentation">
+          <path class="health-wave-line health-wave-line-one" d="M-80 172 C130 85 282 228 480 150 S788 224 987 132 S1298 210 1680 88" />
+          <path class="health-wave-line health-wave-line-two" d="M-60 204 C154 120 294 245 502 181 S803 247 1028 160 S1324 239 1660 138" />
+          <path class="health-wave-line health-wave-line-three" d="M-40 236 C176 156 335 264 540 211 S848 270 1067 197 S1372 258 1640 180" />
+        </svg>
+      </div>
       <div class="container" style="position:relative;z-index:1;">
         <h1 class="display-text-palatino">
-          <span>Personal Agent Systems</span>
-          <span>Foundations, Infrastructure, and Personalization</span>
+          <span class="hero-title-top">The Second Workshop on</span>
+          <span class="hero-title-main">GenAI for Health</span>
+          <span class="hero-title-subtitle">Potential, Trust, and Policy Compliance</span>
         </h1>
-        <div class="hero-workshop-text">NeurIPS 2026 Workshop</div>
+        <div class="hero-workshop-text">GenAI4Health @ NeurIPS 2025<br>December 6, 2025 · San Diego Convention Center</div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="fade-in">
-      <div class="about">
-        <p>Personal agent systems are AI systems that understand individual users, maintain long-term context, coordinate tools and services, and adapt their behavior to personal goals, preferences, and constraints. As foundation models become more capable agents, the central challenge is shifting from isolated task solvers to persistent, trustworthy, and useful assistants that can operate across devices, applications, modalities, and real-world routines.</p>
-        <p>The PAS workshop brings together researchers working on the foundations, infrastructure, benchmarks, and personalization methods required for personal agents. We emphasize reliable reasoning, human-agent interaction, privacy-preserving memory, scalable deployment, and responsible adaptation over time.</p>
-      </div>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="fade-in">
+      <div class="container"><div class="section-header-component"><div class="section-header-row"><span class="section-header-title">Speakers</span><span class="section-header-subtitle">GenAI4Health @ NeurIPS 2025</span></div></div><div class="organizers-grid genai-people-grid"><a href="https://engineering.jhu.edu/faculty/suchi-saria/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/suchi-saria-2.jpg" alt="Suchi Saria" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Suchi Saria</div>
+      <div class="organizer-org">Johns Hopkins University</div>
+    </div></a>
+<a href="https://www.scripps.edu/faculty/topol/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/eric_topol.jpg" alt="Eric Topol" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Eric Topol</div>
+      <div class="organizer-org">Scripps Research</div>
+    </div></a>
+<a href="https://wcm-wanglab.github.io/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/FeiWang_1.jpeg" alt="Fei Wang" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Fei Wang</div>
+      <div class="organizer-org">Weill Cornell Medicine</div>
+    </div></a>
+<a href="https://www.linkedin.com/in/haiderwarraich/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/Haider_WarraichMD.jpg" alt="Haider Warraich" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Haider Warraich</div>
+      <div class="organizer-org">ARPA-H</div>
+    </div></a>
+<a href="https://www.james-zou.com/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/zou.jpg" alt="James Zou" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">James Zou</div>
+      <div class="organizer-org">Stanford University</div>
+    </div></a>
+<a href="https://www.linkedin.com/in/vivek-natarajan-a3670118/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/vivek.jpg" alt="Vivek Natarajan" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Vivek Natarajan</div>
+      <div class="organizer-org">Google</div>
+    </div></a>
+<a href="https://sites.google.com/view/jkimrobot/home" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/Ji Woong Kim.jpg" alt="Ji Woong Kim" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Ji Woong Kim</div>
+      <div class="organizer-org">Stanford University</div>
+    </div></a>
+<a href="https://ai.stanford.edu/~syyeung/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/yeung.jpg" alt="Serena Yeung" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Serena Yeung</div>
+      <div class="organizer-org">Stanford University</div>
+    </div></a>
+<a href="https://pages.cs.wisc.edu/~sharonli/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/yixuanli-2019.jpg" alt="Sharon Yixuan Li" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Sharon Yixuan Li</div>
+      <div class="organizer-org">UW-Madison</div>
+    </div></a>
+<a href="https://cs.stanford.edu/~diyiy/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/Diyi_Yang.jpg" alt="Diyi Yang" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Diyi Yang</div>
+      <div class="organizer-org">Stanford University</div>
+    </div></a>
+<a href="https://sunlab.org/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/jimengsun.jpg" alt="Jimeng Sun" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Jimeng Sun</div>
+      <div class="organizer-org">UIUC</div>
+    </div></a>
+<a href="https://www.linkedin.com/in/munjalshah747/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/Munjal Shah_highrez.jpg" alt="Munjal Shah" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Munjal Shah</div>
+      <div class="organizer-org">Hippocratic AI</div>
+    </div></a>
+<a href="https://www.linkedin.com/in/subho87/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/subho.jpeg" alt="Subho Mukherjee" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Subho Mukherjee</div>
+      <div class="organizer-org">Hippocratic AI</div>
+    </div></a>
+<a href="https://douyang.github.io/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/ouyang.jpg" alt="David Ouyang" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">David Ouyang</div>
+      <div class="organizer-org">Kaiser Permanente Division of Research</div>
+    </div></a>
+<a href="https://ai.stanford.edu/~bryanhe/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/bryan he.jpg" alt="Bryan He" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Bryan He</div>
+      <div class="organizer-org">Stanford University</div>
+    </div></a>
+<a href="https://tianlong-chen.github.io/" class="organizer-card genai-speaker-card">
+    <img src="public/data/images/speakers/tianlong-chen.jpg" alt="Tianlong Chen" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Tianlong Chen</div>
+      <div class="organizer-org">UNC/hireEZ</div>
+    </div></a></div></div>
     </section>
 
-    <!-- Topics Section -->
-    <section id="topics" class="fade-in">
+    <!-- Agenda Section -->
+    <section id="schedule" class="schedule fade-in">
       <div class="container">
-        <div class="section-header-component">
-          <div class="section-header-row">
-            <span class="section-header-title">Topics of Interest</span>
-            <span class="section-header-subtitle">Personal Agent Systems</span>
-          </div>
-        </div>
-        <div class="bento-section">
-          <div class="bento-list">
-            <div class="bento-topic" data-img="topic1.png">
-              <span class="bento-num">1</span>
-              <div class="bento-topic-content">
-                <span class="bento-title">Foundations of Personal Agent Systems</span>
-                <span class="bento-desc">User modeling, intent understanding, preference learning, long-term memory, and reasoning or planning across language, vision, web, mobile, and embodied contexts.</span>
-              </div>
-            </div>
-            <div class="bento-topic" data-img="topic2.png">
-              <span class="bento-num">2</span>
-              <div class="bento-topic-content">
-                <span class="bento-title">Infrastructure for Personal Agents</span>
-                <span class="bento-desc">Memory stores, retrieval, tool use, workflow orchestration, agent operating environments, provenance, rollback, interoperability, and privacy controls.</span>
-              </div>
-            </div>
-            <div class="bento-topic" data-img="topic3.png">
-              <span class="bento-num">3</span>
-              <div class="bento-topic-content">
-                <span class="bento-title">Personalization and Human-Agent Interaction</span>
-                <span class="bento-desc">Adaptive interfaces, controllable proactive assistance, continual personalization, and user-centered applications in web, GUI, mobile, robotics, accessibility, education, healthcare, and creative workflows.</span>
-              </div>
-            </div>
-            <div class="bento-topic" data-img="topic4.png">
-              <span class="bento-num">4</span>
-              <div class="bento-topic-content">
-                <span class="bento-title">Benchmarking, Evaluation, and Datasets</span>
-                <span class="bento-desc">Benchmarks, datasets, simulators, toolkits, and metrics for long-horizon, user-centered, tool-using agents, including task success, personalization quality, reliability, privacy, and trust.</span>
-              </div>
-            </div>
-            <div class="bento-topic" data-img="topic5.png">
-              <span class="bento-num">5</span>
-              <div class="bento-topic-content">
-                <span class="bento-title">Ethics, Interpretability, and Reliability</span>
-                <span class="bento-desc">Safe action execution, consent, oversight, rollback, explainability, auditability, accountability, user ownership, fairness, bias mitigation, and misuse prevention.</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="section-header-component"><div class="section-header-row"><span class="section-header-title">Agenda (Tentative)</span><span class="section-header-subtitle">December 6, 2025</span></div></div>
+        <p class="genai-section-copy">December 6, 2025 @ Upper Level Room 33ABC, San Diego Convention Center. <a href="https://neurips.cc/virtual/2025/loc/san-diego/workshop/109566" target="_blank" rel="noopener noreferrer">See the workshop agenda on NeurIPS official site</a>.</p>
+        <div class="schedule-timeline genai-agenda-timeline"><div class="genai-agenda-heading">Dec 6 Morning</div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">8:00</div><div class="schedule-entry-session">Opening Remarks</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">8:00-8:15</div><div class="schedule-entry-session">Eric Topol (Scripps Research)</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">8:15-8:30</div><div class="schedule-entry-session">Tianlong Chen (UNC / hireEZ)</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">8:30-8:45</div><div class="schedule-entry-session">James Zou (Stanford)</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">8:45-9:00</div><div class="schedule-entry-session">Serena Yeung (Stanford)</div></div>
+  </div>
+<div class="schedule-timeline-row genai-agenda-break">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">9:00-9:30</div><div class="schedule-entry-session">Coffee Break/Poster Session</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">9:30-9:45</div><div class="schedule-entry-session">Fei Wang (Weill Cornell)</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">9:45-10:00</div><div class="schedule-entry-session">Ji Woong Kim (Stanford)</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">10:00-10:15</div><div class="schedule-entry-session">Sharon Yixuan Li (UW-Madison)</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">10:15-10:30</div><div class="schedule-entry-session">Jimeng Sun (UIUC)</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">10:30-10:45</div><div class="schedule-entry-session">Diyi Yang (Stanford)</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">10:45-11:25</div><div class="schedule-entry-session">Panel Discussion I (with morning speakers)</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">11:25-12:00</div><div class="schedule-entry-session">Workshop Paper Presentations</div></div>
+  </div>
+<div class="schedule-timeline-row genai-agenda-break">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">12:00-1:00 PM</div><div class="schedule-entry-session">Lunch Break/Poster Session/Industry Talks</div></div>
+  </div>
+<div class="genai-agenda-heading">Afternoon</div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">1:00-1:15</div><div class="schedule-entry-session">Suchi Saria (Johns Hopkins/Bayesian Health)</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">1:15-1:30</div><div class="schedule-entry-session">Vivek Natarajan (Google Health)</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">1:30-1:45</div><div class="schedule-entry-session">Haider Warraich (ARPA-H)</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">1:45-2:00</div><div class="schedule-entry-session">Munjal Shah &amp; Subho Mukherjee (Hippocratic AI)</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">2:00-2:15</div><div class="schedule-entry-session">David Ouyang (Kaiser Permanente) and Bryan He (Stanford University)</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">2:15-2:45</div><div class="schedule-entry-session">Panel Discussion 2 (with afternoon speakers)</div></div>
+  </div>
+<div class="schedule-timeline-row genai-agenda-break">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">2:45-3:15</div><div class="schedule-entry-session">Coffee Break/Poster Session/Networking</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">3:15-3:45</div><div class="schedule-entry-session">Workshop paper presentations</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">3:45-4:50</div><div class="schedule-entry-session">Poster Session/Networking</div></div>
+  </div>
+<div class="schedule-timeline-row ">
+    <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+    <div class="schedule-entry"><div class="schedule-entry-time">4:50-5:00</div><div class="schedule-entry-session">Award Ceremony/Closing Remarks</div></div>
+  </div></div>
       </div>
     </section>
 
     <!-- Call for Papers Section -->
     <section id="call-for-papers" class="fade-in">
-      <div class="container">
-        <div class="section-header-component">
-          <div class="section-header-row">
-            <span class="section-header-title">Call for Papers</span>
-            <span class="section-header-subtitle">Personal Agent Systems</span>
-          </div>
-        </div>
+      <div class="container genai-section-copy">
+        <div class="section-header-component"><div class="section-header-row"><span class="section-header-title">Call for Papers</span><span class="section-header-subtitle">GenAI4Health @ NeurIPS 2025</span></div></div>
+        <h3>About</h3>
+        <p>Following the successful first GenAI4Health workshop at NeurIPS 2024 (<a href="https://genai4health.github.io/2024-NeurIPS/" target="_blank" rel="noopener noreferrer">https://genai4health.github.io/2024-NeurIPS/</a>), generative AI in healthcare has rapidly evolved from exploratory studies to real-world deployments. With increasing FDA involvement and expanding global regulatory frameworks, the second GenAI4Health workshop aims to bring together AI4Health practitioners, safety researchers, and policy experts to address critical challenges in developing robust and policy-compliant GenAI technologies for health. Submit papers by Sep 5, 2025.</p>
+        <p>Upper Level Room 33ABC, San Diego Convention Center, California, USA. December 6, 2025.</p>
 
-        <h3 id="submission-tracks">Submission Tracks</h3>
-        <p>We invite submissions on the foundations, infrastructure, personalization, evaluation, and responsible deployment of personal agent systems. We welcome original research, position papers, benchmark and dataset papers, system demonstrations, and work-in-progress that can help define the next generation of trustworthy personal AI agents.</p>
-        <br>
+        <h3>Topics of Interest</h3>
+        <p class="genai-section-copy">For the second GenAI4Health workshop at NeurIPS 2025, we invite submissions of original, unpublished work related to the use of Generative AI in healthcare.</p>
+        <div class="bento-section"><div class="bento-list">
+          <div class="bento-topic"><span class="bento-num">1</span><div class="bento-topic-content"><span class="bento-title">GenAI Applications and Use Cases in Health</span><span class="bento-desc">We welcome submissions showcasing practical, innovative, and emerging applications of GenAI across the healthcare spectrum. Example areas include clinical diagnosis support, personalized treatment planning, digital twin-based simulation, synthetic biomedical data generation, remote patient monitoring, AI-assisted surgical robotics, intelligent medical imaging interpretation, and more.</span></div></div>
+          <div class="bento-topic"><span class="bento-num">2</span><div class="bento-topic-content"><span class="bento-title">Trustworthiness and Risk Management</span><span class="bento-desc">Approaches to ensuring the safety, robustness, and fairness of GenAI in medical contexts. Topics include safety benchmarks, misuse detection and prevention, red teaming practices, explainability and transparency, ethical evaluations focused on disparities and bias mitigation, and related safety considerations.</span></div></div>
+          <div class="bento-topic"><span class="bento-num">3</span><div class="bento-topic-content"><span class="bento-title">Policy, Regulation, and Compliance</span><span class="bento-desc">Analysis of regulatory frameworks and real-world deployment challenges. We welcome work addressing alignment with agencies such as the FDA, international standards for AI in healthcare, and strategies for collaboration among GenAI developers, clinicians, and policy experts.</span></div></div>
+        </div></div>
 
-        <h3 id="submission-guidelines">Submission Guidelines</h3>
-        <p>The workshop will use a double-blind review process. Submissions should be anonymized and will receive 3-4 reviews, including ethical review where appropriate. Detailed formatting instructions and the OpenReview submission link will be posted after workshop acceptance.</p>
-        <p>Accepted papers, posters, talk titles, and the final program will be made available online through the workshop website to support broad access to workshop materials.</p>
-        <br>
-
-        <h3 id="important-dates">Tentative Important Dates</h3>
+                <h3>Camera-Ready Submission Guidelines</h3>
+        <ul class="genai-list">
+          <li><strong>Review Feedback:</strong> Please carefully address all reviewer feedback and thoroughly proofread your paper for clarity and consistency.</li>
+          <li><strong>LaTeX Format:</strong> Format your paper using the NeurIPS 2025 LaTeX package with <code>\usepackage[dblblindworkshop,final]{neurips_2025}</code>.</li>
+          <li><strong>Workshop Title:</strong> Include <code>\workshoptitle{The Second Workshop on GenAI for Health: Potential, Trust, and Policy Compliance}</code>.</li>
+          <li><strong>Public Availability:</strong> Your camera-ready paper will be made publicly available on OpenReview after October 31, 2025, unless you contact the organizers before the deadline to opt out.</li>
+        </ul>
+        <h3>Important Dates</h3>
         <table class="important-dates">
-          <tr class="important-date-row">
-            <td><time datetime="2026-08-29"><strong>Aug 29, 2026 (AoE)</strong>&nbsp;</time></td>
-            <td>Workshop contribution submission deadline</td>
-          </tr>
-          <tr class="important-date-row">
-            <td><time datetime="2026-08-30"><strong>Aug 30-Sep 2, 2026</strong>&nbsp;</time></td>
-            <td>Reviewer bidding and assignment</td>
-          </tr>
-          <tr class="important-date-row">
-            <td><time datetime="2026-09-03"><strong>Sep 3-18, 2026</strong>&nbsp;</time></td>
-            <td>Review period</td>
-          </tr>
-          <tr class="important-date-row">
-            <td><time datetime="2026-09-19"><strong>Sep 19-23, 2026</strong>&nbsp;</time></td>
-            <td>Discussion and decisions</td>
-          </tr>
-          <tr class="important-date-row">
-            <td><time datetime="2026-09-24"><strong>Sep 24, 2026 (AoE)</strong>&nbsp;</time></td>
-            <td>Workshop paper notification</td>
-          </tr>
-          <tr class="important-date-row">
-            <td><time datetime="2026-10-10"><strong>Oct 10, 2026 (AoE)</strong>&nbsp;</time></td>
-            <td>Camera-ready and presentation material deadline</td>
-          </tr>
-          <tr class="important-date-row">
-            <td><time datetime="2026-10-20"><strong>Oct 20, 2026</strong>&nbsp;</time></td>
-            <td>Final workshop program posted online</td>
-          </tr>
-          <tr class="important-date-row">
-            <td><time datetime="2026-12-11"><strong>Dec 2026</strong>&nbsp;</time></td>
-            <td>Workshop date, subject to NeurIPS scheduling</td>
-          </tr>
+          <tr class="important-date-row"><td><strong>Sep 5, 2025</strong></td><td>Paper Submission Deadline</td></tr>
+          <tr class="important-date-row"><td><strong>Sep 22, 2025</strong></td><td>Acceptance Notification</td></tr>
+          <tr class="important-date-row"><td><strong>Oct 31, 2025</strong></td><td>Camera-ready Submission</td></tr>
+          <tr class="important-date-row"><td><strong>Dec 6, 2025</strong></td><td>Workshop Day</td></tr>
         </table>
-      </div>
-    </section>
-
-    <!-- Schedule Section -->
-    <section id="schedule" class="schedule fade-in">
-      <div class="container">
-        <div class="section-header-component">
-          <div class="section-header-row">
-            <span class="section-header-title">Schedule</span>
-            <span class="section-header-subtitle">Personal Agent Systems</span>
-          </div>
+        <p><strong>All deadlines are at 11:59 PM AoE (Anywhere on Earth).</strong> Submit your paper via the <a href="https://openreview.net/group?id=NeurIPS.cc/2025/Workshop/GenAI4Health" target="_blank" rel="noopener noreferrer">OpenReview Submission Portal</a>.</p>
+        <h3>Submission Tracks</h3>
+        <p>Submissions within each track can fall into any of the above three topic areas. We provide three tracks for submissions:</p>
+        <div class="genai-track-grid">
+          <article><h4>Track 1: Research Papers</h4><p>Form the core of the program and present methodological advances and empirical evaluations. The main content of the paper should be no longer than 9 pages.</p></article>
+          <article><h4>Track 2: Demonstration Papers</h4><p>Showcasing working systems or applications. Present practical implementations and real-world applications. The main content of the paper should be no longer than 5 pages. <strong>The paper title should start with 'Demo:'.</strong></p></article>
+          <article><h4>Track 3: Position Papers</h4><p>Offering perspectives or proposals on policy, governance, or deployment strategies. See <a href="https://neurips.cc/Conferences/2025/CallForPositionPapers" target="_blank" rel="noopener noreferrer">NeurIPS 2025 Call for Position Papers</a> to understand what position papers are. <strong>Deadline: Sep 5, 2025 (NOT the main NeurIPS deadline).</strong> The main content of the paper should be no longer than 5 pages. <strong>The paper title should start with 'Position:'.</strong></p></article>
         </div>
-        <p>The workshop is planned as a one-day, in-person NeurIPS 2026 event spanning 8.5 hours. The program is designed to move beyond a talks-only format by combining invited talks, contributed oral sessions, posters, demos, structured discussion, and a panel.</p>
-        <div class="schedule-timeline" aria-label="Workshop schedule">
-          <div class="schedule-timeline-header" aria-hidden="true">
-            <div>Duration</div>
-            <div></div>
-            <div class="schedule-timeline-heading-stack">
-              <span>Time</span>
-              <span>Session</span>
-            </div>
-          </div>
-          <div class="schedule-timeline-list">
-            <div class="schedule-timeline-row first">
-              <div class="schedule-duration">10 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">09:00 - 09:10</div><div class="schedule-entry-session">Opening remarks and workshop goals</div></div>
-            </div>
-            <div class="schedule-timeline-row">
-              <div class="schedule-duration">30 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">09:10 - 09:40</div><div class="schedule-entry-session">Invited talk 1: Foundations of personal agents</div></div>
-            </div>
-            <div class="schedule-timeline-row">
-              <div class="schedule-duration">30 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">09:40 - 10:10</div><div class="schedule-entry-session">Invited talk 2: Safe and trustworthy agent systems</div></div>
-            </div>
-            <div class="schedule-timeline-row">
-              <div class="schedule-duration">20 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">10:10 - 10:30</div><div class="schedule-entry-session">Coffee break</div></div>
-            </div>
-            <div class="schedule-timeline-row">
-              <div class="schedule-duration">50 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">10:30 - 11:20</div><div class="schedule-entry-session">Contributed oral session 1</div></div>
-            </div>
-            <div class="schedule-timeline-row">
-              <div class="schedule-duration">40 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">11:20 - 12:00</div><div class="schedule-entry-session">Structured discussion: What should personal agents remember?</div></div>
-            </div>
-            <div class="schedule-timeline-row">
-              <div class="schedule-duration">60 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">12:00 - 13:00</div><div class="schedule-entry-session">Lunch break</div></div>
-            </div>
-            <div class="schedule-timeline-row">
-              <div class="schedule-duration">30 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">13:00 - 13:30</div><div class="schedule-entry-session">Invited talk 3: Personalization and human-agent interaction</div></div>
-            </div>
-            <div class="schedule-timeline-row">
-              <div class="schedule-duration">50 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">13:30 - 14:20</div><div class="schedule-entry-session">Poster session 1 and demos</div></div>
-            </div>
-            <div class="schedule-timeline-row">
-              <div class="schedule-duration">50 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">14:20 - 15:10</div><div class="schedule-entry-session">Contributed oral session 2</div></div>
-            </div>
-            <div class="schedule-timeline-row">
-              <div class="schedule-duration">20 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">15:10 - 15:30</div><div class="schedule-entry-session">Coffee break</div></div>
-            </div>
-            <div class="schedule-timeline-row">
-              <div class="schedule-duration">30 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">15:30 - 16:00</div><div class="schedule-entry-session">Invited talk 4: Infrastructure for deployable agents</div></div>
-            </div>
-            <div class="schedule-timeline-row">
-              <div class="schedule-duration">45 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">16:00 - 16:45</div><div class="schedule-entry-session">Panel and audience debate: Personal agents in the real world</div></div>
-            </div>
-            <div class="schedule-timeline-row">
-              <div class="schedule-duration">35 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">16:45 - 17:20</div><div class="schedule-entry-session">Poster session 2 and breakout reports</div></div>
-            </div>
-            <div class="schedule-timeline-row last">
-              <div class="schedule-duration">10 min</div>
-              <div class="schedule-rail"><span></span></div>
-              <div class="schedule-entry"><div class="schedule-entry-time">17:20 - 17:30</div><div class="schedule-entry-session">Awards and closing remarks</div></div>
-            </div>
-          </div>
-        </div>
-        <p style="margin-top: 1.5rem;"><a href="schedule.html"><strong>View the standalone schedule page</strong></a></p>
-      </div>
-    </section>
-
-    <!-- Submission Outcomes Section -->
-    <section id="accepted-papers" class="fade-in">
-      <div class="container">
-        <div class="section-header-component">
-          <div class="section-header-row">
-            <span class="section-header-title">Submission Outcomes</span>
-            <span class="section-header-subtitle">Personal Agent Systems</span>
-          </div>
-        </div>
-        <div class="notice-panel">
-          <h3>Accepted papers will be announced after review.</h3>
-          <p>We expect to receive 60-80 submissions and will recruit a broad program committee so that each submission receives 3-4 reviews while keeping reviewer load reasonable. Outstanding papers will be invited for oral presentations, lightning talks, posters, and demos.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Speakers & Panel Section -->
-    <section id="speakers" class="fade-in">
-      <div class="container">
-        <div class="section-header-component">
-          <div class="section-header-row">
-            <span class="section-header-title">Invited Speakers</span>
-            <span class="section-header-subtitle">Personal Agent Systems</span>
-          </div>
-        </div>
-        <div class="speakers-title" style="margin-top:2rem; margin-bottom:1rem;">
-          <h3>Invited Speakers</h3>
-        </div>
-        <div class="organizers-grid">
-          <a href="https://jindonggu.github.io/" target="_blank" class="organizer-card" style="position: relative;">
-            <div class="organizer-role">Confirmed</div>
-            <img src="./public/jindong-gu.jpg" alt="Jindong Gu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Jindong Gu</div>
-              <div class="organizer-org">Google DeepMind & University of Oxford</div>
-            </div>
-          </a>
-
-          <a href="https://yumeng5.github.io/" target="_blank" class="organizer-card" style="position: relative;">
-            <div class="organizer-role">Confirmed</div>
-            <img src="./public/yu-meng.jpg" alt="Yu Meng" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Yu Meng</div>
-              <div class="organizer-org">The University of Virginia</div>
-            </div>
-          </a>
-
-          <div class="organizer-card" style="position: relative;">
-            <div class="organizer-role">Confirmed</div>
-            <img src="./public/zhongwei-wan.jpeg" alt="Zhongwei Wan" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Zhongwei Wan</div>
-              <div class="organizer-org">Tencent Hunyuan Team</div>
-            </div>
-          </div>
-
-          <div class="organizer-card" style="position: relative;">
-            <div class="organizer-role">Tentative</div>
-            <img src="./public/hao-yu.jpg" alt="Hao Yu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Hao Yu</div>
-              <div class="organizer-org">Qwen Team</div>
-            </div>
-          </div>
-
-          <a href="https://www.shuyanzhou.com/" target="_blank" class="organizer-card" style="position: relative;">
-            <div class="organizer-role">Confirmed</div>
-            <img src="./public/shuyan-zhou.png" alt="Shuyan Zhou" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Shuyan Zhou</div>
-              <div class="organizer-org">Meta Superintelligence Labs & Duke University</div>
-            </div>
-          </a>
-        </div>
+        <h3>Submission Format Requirements</h3>
+        <ul class="genai-list">
+          <li>Use the <a href="https://media.neurips.cc/Conferences/NeurIPS2025/Styles.zip" target="_blank" rel="noopener noreferrer">NeurIPS 2025 LaTeX style file</a>. The NeurIPS Paper Checklist is not required.</li>
+          <li>Use <code>\usepackage{neurips_2025}</code> without options to ensure the submission is anonymous.</li>
+          <li><strong>All page limits exclude acknowledgments, references, and appendix.</strong></li>
+          <li>Papers may be rejected without consideration of their merits if they fail to meet the submission requirements.</li>
+          <li>We encourage multidisciplinary submissions involving stakeholders from healthcare, public policy, or adjacent fields.</li>
+          <li>Supplementary materials (code, data, videos) may be submitted as appendices.</li>
+          <li>Papers must not have been previously published at another venue at the time of submission.</li>
+          <li><strong>The accepted papers will be non-archival (NOT included in proceedings or any form of publication).</strong></li>
+          <li><strong>Non-archival status means papers can be submitted to other venues after the workshop.</strong></li>
+          <li>Accepted workshop papers (after the camera-ready stage) will be made publicly available by default. However, authors may choose to opt out, in which case their paper (PDF file) will not appear on OpenReview. A reminder will be sent to authors before the camera-ready stage.</li>
+        </ul>
+        <h3>Review Process</h3>
+        <ul class="genai-list">
+          <li>Each paper will receive at least two anonymous reviews.</li>
+          <li><strong>All submissions must be anonymized and may not contain identifying information.</strong></li>
+          <li>This policy applies to supplementary or linked material, including code.</li>
+          <li><strong>Please do not include acknowledgments at submission time. Any papers found to be violating this policy will be rejected.</strong></li>
+        </ul>
+        <h3>Presentation &amp; Awards</h3>
+        <ul class="genai-list"><li>All accepted papers will be presented with posters.</li><li>Oral/spotlight presentations will be selected from the accepted papers.</li><li><strong>Three Outstanding Paper Awards will be selected, one for each paper track.</strong></li></ul>
       </div>
     </section>
 
     <!-- Organizers Section -->
     <section id="organizers" class="fade-in">
-      <div class="container">
-        <div class="section-header-component">
-          <div class="section-header-row">
-            <span class="section-header-title">Organizers</span>
-            <span class="section-header-subtitle">Personal Agent Systems</span>
-          </div>
-        </div>
-        <div class="organizers-grid">
-          <a href="https://wenhuchen.github.io/" target="_blank" class="organizer-card" style="position: relative;">
-
-            <img src="./public/wenhu-chen.jpg" alt="Wenhu Chen" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Wenhu Chen</div>
-              <div class="organizer-org">Meta Superintelligence Labs</div>
-            </div>
-          </a>
-
-          <div class="organizer-card" style="position: relative;">
-            <img src="./public/ching-yun-ko.jpg" alt="Ching-Yun Ko" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Ching-Yun Ko</div>
-              <div class="organizer-org">IBM & MIT</div>
-            </div>
-          </div>
-
-          <a href="https://luoping.me/" target="_blank" class="organizer-card" style="position: relative;">
-
-            <img src="./public/ping-luo.jpg" alt="Ping Luo" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Ping Luo</div>
-              <div class="organizer-org">The University of Hong Kong</div>
-            </div>
-          </a>
-
-          <a href="https://killthefullmoon.github.io/" target="_blank" class="organizer-card" style="position: relative;">
-
-            <img src="./public/hui-shen.png" alt="Hui Shen" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Hui Shen</div>
-              <div class="organizer-org">University of Michigan</div>
-            </div>
-          </a>
-
-          <a href="https://wutaiqiang.github.io/" target="_blank" class="organizer-card" style="position: relative;">
-
-            <img src="./public/taiqiang-wu.jpg" alt="Taiqiang Wu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Taiqiang Wu</div>
-              <div class="organizer-org">The University of Hong Kong</div>
-            </div>
-          </a>
-
-          <a href="https://menik1126.github.io/" target="_blank" class="organizer-card" style="position: relative;">
-
-            <img src="./public/jing-xiong.png" alt="Jing Xiong" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Jing Xiong</div>
-              <div class="organizer-org">The University of Hong Kong</div>
-            </div>
-          </a>
-
-          <a href="https://drogozhang.github.io/" target="_blank" class="organizer-card" style="position: relative;">
-
-            <img src="./public/kai-zhang.jpg" alt="Kai Zhang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Kai Zhang</div>
-              <div class="organizer-org">NeoCognition</div>
-            </div>
-          </a>
-
-          <a href="https://engineering.osu.edu/people/zhang.13664" target="_blank" class="organizer-card" style="position: relative;">
-
-            <img src="./public/mi-zhang.jpg" alt="Mi Zhang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Mi Zhang</div>
-              <div class="organizer-org">The Ohio State University</div>
-            </div>
-          </a>
-        </div>
-      </div>
+      <div class="container"><div class="section-header-component"><div class="section-header-row"><span class="section-header-title">Organizers</span><span class="section-header-subtitle">GenAI4Health @ NeurIPS 2025</span></div></div><div class="organizers-grid genai-people-grid"><a href="https://jiaweixu98.github.io/" class="organizer-card">
+    
+    <img src="public/data/images/organizers/jiaweixu.jpg" alt="Jiawei Xu" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Jiawei Xu</div>
+      <div class="organizer-org">UT Austin</div>
+      
+      
+      
+    </div></a>
+<a href="https://ai.stanford.edu/~xtiange/" class="organizer-card">
+    
+    <img src="public/data/images/organizers/tiange.jpg" alt="Tiange Xiang" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Tiange Xiang</div>
+      <div class="organizer-org">Stanford University</div>
+      
+      
+      
+    </div></a>
+<a href="https://dbmi.hms.harvard.edu/people/pranav-rajpurkar" class="organizer-card">
+    
+    <img src="public/data/images/organizers/PranavRajpurkar_1.jpeg" alt="Pranav Rajpurkar" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Pranav Rajpurkar</div>
+      <div class="organizer-org">Harvard University</div>
+      
+      
+      
+    </div></a>
+<a href="https://jyhong.gitlab.io/" class="organizer-card">
+    
+    <img src="public/data/images/organizers/junyuan.jpeg" alt="Junyuan Hong" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Junyuan Hong</div>
+      <div class="organizer-org">National University of Singapore</div>
+      
+      
+      
+    </div></a>
+<a href="https://changan.io/" class="organizer-card">
+    
+    <img src="public/data/images/organizers/changan.jpg" alt="Changan Chen" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Changan Chen</div>
+      <div class="organizer-org">Stanford University</div>
+      
+      
+      
+    </div></a>
+<a href="https://profiles.stanford.edu/ehsan-adeli" class="organizer-card">
+    
+    <img src="public/data/images/organizers/ehsan.jpg" alt="Ehsan Adeli" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Ehsan Adeli</div>
+      <div class="organizer-org">Stanford University</div>
+      
+      
+      
+    </div></a>
+<a href="https://xxlya.github.io/" class="organizer-card">
+    
+    <img src="public/data/images/organizers/xiaoxiao.jpg" alt="Xiaoxiao Li" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Xiaoxiao Li</div>
+      <div class="organizer-org">University of British Columbia</div>
+      
+      
+      
+    </div></a>
+<a href="https://geopavlakos.github.io/" class="organizer-card">
+    
+    <img src="public/data/images/organizers/georgios_pavlakos_res.jpg" alt="Georgios Pavlakos" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Georgios Pavlakos</div>
+      <div class="organizer-org">UT Austin</div>
+      
+      
+      
+    </div></a>
+<a href="https://www.ri.cmu.edu/ri-faculty/zakia-hammal/" class="organizer-card">
+    
+    <img src="public/data/images/organizers/zakia.jpg" alt="Zakia Hammal" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Zakia Hammal</div>
+      <div class="organizer-org">Robotics Institute RI/CMU</div>
+      
+      
+      
+    </div></a>
+<a href="https://profiles.stanford.edu/scott-delp" class="organizer-card">
+    
+    <img src="public/data/images/organizers/scott.png" alt="Scott Delp" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Scott Delp</div>
+      <div class="organizer-org">Stanford University</div>
+      
+      
+      
+    </div></a>
+<a href="https://profiles.stanford.edu/fei-fei-li" class="organizer-card">
+    
+    <img src="public/data/images/organizers/feifei.png" alt="Fei-Fei Li" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Fei-Fei Li</div>
+      <div class="organizer-org">Stanford University</div>
+      
+      
+      
+    </div></a>
+<a href="https://ischool.utexas.edu/profiles/ying-ding" class="organizer-card">
+    
+    <img src="public/data/images/organizers/YingDing.jpg" alt="Ying Ding" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Ying Ding</div>
+      <div class="organizer-org">UT Austin</div>
+      
+      
+      
+    </div></a></div></div>
     </section>
-
-    <!-- Advisory Board Section -->
-    <section id="advisory-board" class="fade-in">
-      <div class="container">
-        <div class="section-header-component">
-          <div class="section-header-row">
-            <span class="section-header-title">Advisory Board & Panelists</span>
-            <span class="section-header-subtitle">Personal Agent Systems</span>
-          </div>
-        </div>
-        <div class="organizers-grid">
-          <a href="https://gaohuang-net.github.io/" target="_blank" class="organizer-card" style="position: relative;">
-
-            <img src="./public/gao-huang.jpg" alt="Gao Huang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Gao Huang</div>
-              <div class="organizer-org">Tsinghua University</div>
-            </div>
-          </a>
-
-          <a href="https://web.eecs.umich.edu/~zmao/" target="_blank" class="organizer-card" style="position: relative;">
-
-            <img src="./public/z-morley-mao.jpg" alt="Z. Morley Mao" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Z. Morley Mao</div>
-              <div class="organizer-org">University of Michigan</div>
-            </div>
-          </a>
-
-          <a href="https://engineering.osu.edu/people/sun.397" target="_blank" class="organizer-card" style="position: relative;">
-
-            <img src="./public/huan-sun.png" alt="Huan Sun" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Huan Sun</div>
-              <div class="organizer-org">The Ohio State University</div>
-            </div>
-          </a>
-
-          <a href="https://www.robots.ox.ac.uk/~phst/" target="_blank" class="organizer-card" style="position: relative;">
-
-            <img src="./public/phil-torr.png" alt="Philip Torr" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Philip Torr</div>
-              <div class="organizer-org">University of Oxford</div>
-            </div>
-          </a>
-
-          <a href="https://www.eee.hku.hk/~nwong/" target="_blank" class="organizer-card" style="position: relative;">
-
-            <img src="./public/ngai-wong.jpg" alt="Ngai Wong" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Ngai Wong</div>
-              <div class="organizer-org">The University of Hong Kong</div>
-            </div>
-          </a>
-
-          <a href="https://chaofantao.top/" target="_blank" class="organizer-card" style="position: relative;">
-
-            <img src="./public/chaofan-tao.png" alt="Chaofan Tao" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Chaofan Tao</div>
-              <div class="organizer-org">The University of Hong Kong</div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
+    
+  <section class="fade-in genai-people-section">
+    <div class="container">
+      <h3 class="genai-subsection-title">Award Committee</h3>
+      <div class="organizers-grid genai-people-grid"><a href="https://tianlong-chen.github.io/" class="organizer-card">
+    <img src="public/data/images/organizers/tianlong-chen.jpg" alt="Tianlong Chen" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Tianlong Chen</div>
+      <div class="organizer-org">The University of North Carolina at Chapel Hill</div>
+      
+      
+      
+    </div></a>
+<a href="https://kaidixu.com/" class="organizer-card">
+    <img src="public/data/images/organizers/kaidi-xu.jpg" alt="Kaidi Xu" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Kaidi Xu</div>
+      <div class="organizer-org">City University of Hong Kong</div>
+      
+      
+      
+    </div></a></div>
+    </div>
+  </section>
+    
+  <section class="fade-in genai-people-section">
+    <div class="container">
+      <h3 class="genai-subsection-title">Student Organizers</h3>
+      <div class="organizers-grid genai-people-grid"><a href="https://www.gholste.me/" class="organizer-card">
+    <img src="public/data/images/organizers/Gregory.png" alt="Gregory Holste" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Gregory Holste</div>
+      <div class="organizer-org">UT Austin</div>
+      
+      
+      
+    </div></a>
+<a href="https://haoyang504.github.io/" class="organizer-card">
+    <img src="public/data/images/organizers/haoyang wang.jpeg" alt="Haoyang Wang" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Haoyang Wang</div>
+      <div class="organizer-org">UT Austin</div>
+      
+      
+      
+    </div></a>
+<a href="https://www.linkedin.com/m/in/jinrui-fang" class="organizer-card">
+    <img src="public/data/images/organizers/jinrui fang.jpeg" alt="Jinrui Fang" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Jinrui Fang</div>
+      <div class="organizer-org">UT Austin</div>
+      
+      
+      
+    </div></a>
+<a href="https://www.linkedin.com/in/charlie-yi/" class="organizer-card">
+    <img src="public/data/images/organizers/CharlieYi.jpeg" alt="Charlie Yi" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Charlie Yi</div>
+      <div class="organizer-org">UT Austin</div>
+      
+      
+      
+    </div></a>
+<a href="https://www.linkedin.com/in/lily-boddy/" class="organizer-card">
+    <img src="public/data/images/organizers/Lily Boddy.jpeg" alt="Lily Boddy" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Lily Boddy</div>
+      <div class="organizer-org">UT Austin</div>
+      
+      
+      
+    </div></a></div>
+    </div>
+  </section>
+    
+  <section class="fade-in genai-people-section">
+    <div class="container">
+      <h3 class="genai-subsection-title">Local Organizing Committee</h3>
+      <div class="organizers-grid genai-people-grid"><a href="https://shengliu66.github.io/" class="organizer-card">
+    
+    <img src="public/data/images/organizers/shengliu.jpg" alt="Sheng Liu" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Sheng Liu</div>
+      <div class="organizer-org">Stanford University</div>
+      
+      
+      
+    </div></a>
+<a href="https://yannhan.github.io/" class="organizer-card">
+    
+    <img src="public/data/images/organizers/yanhan.jpeg" alt="Yan Han" class="organizer-photo">
+    <span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+    <div class="organizer-info">
+      <div class="organizer-name">Yan Han</div>
+      <div class="organizer-org">Amazon</div>
+      
+      
+      
+    </div></a></div>
+    </div>
+  </section>
 
     <!-- Program Committee Section -->
     <section id="committee" class="fade-in">
-      <div class="container">
-        <div class="section-header-component">
-          <div class="section-header-row">
-            <span class="section-header-title">Program Committee</span>
-            <span class="section-header-subtitle">Personal Agent Systems</span>
-          </div>
-        </div>
-        <p>The program committee brings together researchers across computer vision, NLP, reinforcement learning, LLM agents, human-centered AI, systems, privacy, and trustworthy deployment.</p>
-        <div class="organizers-grid pc-grid">
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/lingfan-bao.jpeg" alt="Lingfan Bao" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Lingfan Bao</div>
-              <div class="organizer-org">University College London</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/zhuhan-bao.jpg" alt="Zhuhan Bao" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Zhuhan Bao</div>
-              <div class="organizer-org">Duke University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/hei-ting-chan.jpg" alt="Hei Ting Chan" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Hei Ting Chan</div>
-              <div class="organizer-org">University of Michigan</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/hangxiang-chen.jpg" alt="Hangxiang Chen" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Hangxiang Chen</div>
-              <div class="organizer-org">Independent</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/wenhao-chai.jpg" alt="Wenhao Chai" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Wenhao Chai</div>
-              <div class="organizer-org">Princeton University</div>
-            </div>
-          </div>
-
-          <a href="https://minkyoungcho.github.io/" target="_blank" class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/minkyoung-cho.jpg" alt="Minkyoung Cho" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Minkyoung Cho</div>
-              <div class="organizer-org">University of Michigan</div>
-            </div>
-          </a>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/kunxiao-gao.jpeg" alt="Kunxiao Gao" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Kunxiao Gao</div>
-              <div class="organizer-org">University of Michigan</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/ziyi-guo.jpg" alt="Ziyi Guo" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Ziyi Guo</div>
-              <div class="organizer-org">Northwestern University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/guangzeng-han.jpg" alt="Guangzeng Han" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Guangzeng Han</div>
-              <div class="organizer-org">University of Memphis</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/qi-han.jpg" alt="Qi Han" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Qi Han</div>
-              <div class="organizer-org">The University of Hong Kong</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/shuai-he.jpg" alt="Shuai He" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Shuai He</div>
-              <div class="organizer-org">University of Maryland</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/yunta-hsieh.jpeg" alt="Yunta Hsieh" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Yunta Hsieh</div>
-              <div class="organizer-org">University of Michigan</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/jintao-huang.jpg" alt="Jintao Huang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Jintao Huang</div>
-              <div class="organizer-org">The Ohio State University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/tao-hu.jpeg" alt="Tao Hu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Tao Hu</div>
-              <div class="organizer-org">LMU Munich</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/rui-hu.jpg" alt="Rui Hu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Rui Hu</div>
-              <div class="organizer-org">Independent</div>
-            </div>
-          </div>
-
-          <a href="https://shuoweijin.com/" target="_blank" class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/shuowei-jin.png" alt="Shuowei Jin" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Shuowei Jin</div>
-              <div class="organizer-org">Amazon</div>
-            </div>
-          </a>
-
-          <a href="https://people.epfl.ch/chengkun.li" target="_blank" class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/chengkun-li.jpg" alt="Chengkun Li" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Chengkun Li</div>
-              <div class="organizer-org">EPFL</div>
-            </div>
-          </a>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/yingtie-lei.png" alt="Yingtie Lei" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Yingtie Lei</div>
-              <div class="organizer-org">The Ohio State University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/jiarui-li.jpeg" alt="Jiarui Li" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Jiarui Li</div>
-              <div class="organizer-org">University of Michigan</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/jisen-li.jpg" alt="Jisen Li" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Jisen Li</div>
-              <div class="organizer-org">Together AI</div>
-            </div>
-          </div>
-
-          <a href="https://waylonli.com/" target="_blank" class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/weixian-li.jpg" alt="Weixian Li" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Weixian Li</div>
-              <div class="organizer-org">The University of Edinburgh</div>
-            </div>
-          </a>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/xingzhi-li.jpg" alt="Xingzhi Li" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Xingzhi Li</div>
-              <div class="organizer-org">Independent</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/ziyuan-liu.jpg" alt="Ziyuan Liu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Ziyuan Liu</div>
-              <div class="organizer-org">Peking University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/ruiyao-liu.jpg" alt="Ruiyao Liu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Ruiyao Liu</div>
-              <div class="organizer-org">Xi'an Jiaotong University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/deyang-luorong.jpg" alt="Deyang Luorong" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Deyang Luorong</div>
-              <div class="organizer-org">University of Wisconsin-Madison</div>
-            </div>
-          </div>
-
-          <a href="https://xenshinu.github.io/" target="_blank" class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/xueshen-liu-updated.jpg" alt="Xueshen Liu" class="organizer-photo xueshen-liu-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Xueshen Liu</div>
-              <div class="organizer-org">University of Michigan</div>
-            </div>
-          </a>
-
-          <a href="https://dusp.mit.edu/people/yifeng-liu" target="_blank" class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/yifeng-liu.jpg" alt="Yifeng Liu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Yifeng Liu</div>
-              <div class="organizer-org">MIT</div>
-            </div>
-          </a>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/jiawei-lu.jpeg" alt="Jiawei Lu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Jiawei Lu</div>
-              <div class="organizer-org">University of Wisconsin-Madison</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/jianing-ma.jpg" alt="Jianing Ma" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Jianing Ma</div>
-              <div class="organizer-org">Northern Arizona University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/xutao-ma.jpg" alt="Xutao Ma" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Xutao Ma</div>
-              <div class="organizer-org">UC Berkeley</div>
-            </div>
-          </div>
-
-          <a href="https://yuanshengni.github.io/" target="_blank" class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/yuansheng-ni.jpg" alt="Yuansheng Ni" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Yuansheng Ni</div>
-              <div class="organizer-org">University of Waterloo</div>
-            </div>
-          </a>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/sanguyu-pan.jpg" alt="Sanguyu Pan" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Sanguyu Pan</div>
-              <div class="organizer-org">Independent</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/manxi-sun.jpeg" alt="Manxi Sun" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Manxi Sun</div>
-              <div class="organizer-org">Tencent Robotics X</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/xijia-tao.jpg" alt="Xijia Tao" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Xijia Tao</div>
-              <div class="organizer-org">The University of Hong Kong</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/xin-wang.jpeg" alt="Xin Wang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Xin Wang</div>
-              <div class="organizer-org">The Ohio State University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/jizhou-wang.jpg" alt="Jizhou Wang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Jizhou Wang</div>
-              <div class="organizer-org">University of Toronto</div>
-            </div>
-          </div>
-
-          <a href="https://junlingwang0512.github.io/" target="_blank" class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/junling-wang.jpg" alt="Junling Wang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Junling Wang</div>
-              <div class="organizer-org">ETH Zurich</div>
-            </div>
-          </a>
-
-          <a href="https://cohort.inf.ed.ac.uk/" target="_blank" class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/mengyu-wang.jpg" alt="Mengyu Wang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Mengyu Wang</div>
-              <div class="organizer-org">The University of Edinburgh</div>
-            </div>
-          </a>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/mengyao-wen.jpg" alt="Mengyao Wen" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Mengyao Wen</div>
-              <div class="organizer-org">Independent</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/tianyu-wu.jpeg" alt="Tianyu Wu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Tianyu Wu</div>
-              <div class="organizer-org">Harvard University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/chenqi-yin.jpg" alt="Chenqi Yin" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Chenqi Yin</div>
-              <div class="organizer-org">Boston University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/kejing-xia.jpeg" alt="Kejing Xia" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Kejing Xia</div>
-              <div class="organizer-org">Georgia Institute of Technology</div>
-            </div>
-          </div>
-
-          <a href="https://hsaest.github.io/" target="_blank" class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/jian-xie-updated.png" alt="Jian Xie" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Jian Xie</div>
-              <div class="organizer-org">The Ohio State University</div>
-            </div>
-          </a>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/jing-xu-avatar.jpg" alt="Jing Xu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Jing Xu</div>
-              <div class="organizer-org">USTC</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/sihan-xu.jpg" alt="Sihan Xu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Sihan Xu</div>
-              <div class="organizer-org">University of Michigan</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/xin-xu.jpg" alt="Xin Xu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Xin Xu</div>
-              <div class="organizer-org">Independent</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/wendong-xu.jpg" alt="Wendong Xu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Wendong Xu</div>
-              <div class="organizer-org">The University of Hong Kong</div>
-            </div>
-          </div>
-
-          <a href="https://rattlesnakey.github.io/" target="_blank" class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/hengyuan-zhang.jpg" alt="Hengyuan Zhang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Hengyuan Zhang</div>
-              <div class="organizer-org">The University of Hong Kong</div>
-            </div>
-          </a>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/jingxuan-zhang.jpg" alt="Jingxuan Zhang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Jingxuan Zhang</div>
-              <div class="organizer-org">The Ohio State University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/ruoke-zhang.jpg" alt="Ruoke Zhang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Ruoke Zhang</div>
-              <div class="organizer-org">University of Washington</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/ruoyan-zhang.jpg" alt="Ruoyan Zhang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Ruoyan Zhang</div>
-              <div class="organizer-org">Independent</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/zaifu-zhan.jpg" alt="Zaifu Zhan" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Zaifu Zhan</div>
-              <div class="organizer-org">University of Minnesota</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/yu-zhang.jpg" alt="Yu Zhang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Yu Zhang</div>
-              <div class="organizer-org">Tongji University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/wenbo-zhang.jpg" alt="Wenbo Zhang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Wenbo Zhang</div>
-              <div class="organizer-org">Pennsylvania State University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/yifan-zhang.jpg" alt="Yifan Zhang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Yifan Zhang</div>
-              <div class="organizer-org">University of Michigan</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/ziheng-zhang.jpeg" alt="Ziheng Zhang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Ziheng Zhang</div>
-              <div class="organizer-org">The Ohio State University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/zhen-zhang.jpg" alt="Zhen Zhang" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Zhen Zhang</div>
-              <div class="organizer-org">UCSB</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/zesen-zhao.png" alt="Zesen Zhao" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Zesen Zhao</div>
-              <div class="organizer-org">University of Michigan</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/chenyang-zhao.jpg" alt="Chenyang Zhao" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Chenyang Zhao</div>
-              <div class="organizer-org">RadixArk</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/boyuan-zheng.jpg" alt="Boyuan Zheng" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Boyuan Zheng</div>
-              <div class="organizer-org">University of Michigan</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/nan-zheng.jpg" alt="Nan Zheng" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Nan Zheng</div>
-              <div class="organizer-org">Zhejiang University</div>
-            </div>
-          </div>
-
-          <div class="organizer-card pc-card" style="position: relative;">
-            <img src="./public/ruiyang-zhu.jpg" alt="Ruiyang Zhu" class="organizer-photo">
-            <div class="organizer-info">
-              <div class="organizer-name">Ruiyang Zhu</div>
-              <div class="organizer-org">University of Michigan</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Support Team Section -->
-    <section id="support-team" class="fade-in">
-      <div class="container">
-        <div class="section-header-component">
-          <div class="section-header-row">
-            <span class="section-header-title">Support Team</span>
-            <span class="section-header-subtitle">Personal Agent Systems</span>
-          </div>
-        </div>
-        <div class="section-content">
-          <p>The support team will coordinate OpenReview, accepted materials, posters, talk titles, and workshop updates. Additional support details will be added after workshop acceptance.</p>
-        </div>
-      </div>
+      <div class="container genai-section-copy"><div class="section-header-component"><div class="section-header-row"><span class="section-header-title">Program Committee</span><span class="section-header-subtitle">Listed in alphabetical order</span></div></div><ul class="genai-pc-list"><li><strong>Adibvafa Fallahpour</strong><span>Cohere</span></li>
+<li><strong>Adrita Anika</strong><span>Amazon</span></li>
+<li><strong>Akshay Swaminathan</strong><span>Stanford University</span></li>
+<li><strong>Alexandre Sallinen</strong><span>EPFL - EPF Lausanne</span></li>
+<li><strong>Alireza Rafiei</strong><span>Emory University</span></li>
+<li><strong>Aly A Khan</strong><span>University of Chicago</span></li>
+<li><strong>Amey Sunil Kulkarni</strong><span>Independent Researcher</span></li>
+<li><strong>Amin Adibi</strong><span>University of British Columbia</span></li>
+<li><strong>Antonio Parziale</strong><span>University of Salerno</span></li>
+<li><strong>Ariel Guerra-Adames</strong><span>University of Bordeaux</span></li>
+<li><strong>Arshia Ilaty</strong><span>University of California, Irvine</span></li>
+<li><strong>Awais Naeem</strong><span>University of Texas at Austin</span></li>
+<li><strong>Ayush Singla</strong><span>Stanford University</span></li>
+<li><strong>Bailey Trang</strong><span>Stanford University</span></li>
+<li><strong>Barbara Klaudel</strong><span>Gdańsk University of Technology</span></li>
+<li><strong>Bhanu Pratap Singh Rawat</strong><span>University of Massachusetts, Amherst</span></li>
+<li><strong>Bhawesh Kumar</strong><span>Google</span></li>
+<li><strong>Bogdan Kulynych</strong><span>CHUV - University Hospital Lausanne</span></li>
+<li><strong>Bowen Yi</strong><span>University of Southern California</span></li>
+<li><strong>Brian Hyeongseok Kim</strong><span>University of Southern California</span></li>
+<li><strong>Chengbo Zhan</strong><span>University of Texas at Arlington</span></li>
+<li><strong>Chufan Gao</strong><span>University of Illinois Urbana-Champaign</span></li>
+<li><strong>Chulin Xie</strong><span>University of Illinois, Urbana Champaign</span></li>
+<li><strong>Daniil Filienko</strong><span>University of Washington</span></li>
+<li><strong>David Calhas</strong><span>Instituto de Engenharia de Sistemas e Computadores</span></li>
+<li><strong>DeBrae Kennedy-Mayo</strong><span>Law &amp; Ethics at Georgia Institute of Technology</span></li>
+<li><strong>Denis Jered McInerney</strong><span>CodaMetrix</span></li>
+<li><strong>Ethan Harvey</strong><span>Tufts University</span></li>
+<li><strong>Fabian Gröger</strong><span>University of Basel</span></li>
+<li><strong>Fangda Jiang</strong><span>Peking University</span></li>
+<li><strong>Fenglin Liu</strong><span>Oxford University Hospitals</span></li>
+<li><strong>Fengxiang Zhao</strong><span>Facebook</span></li>
+<li><strong>Francesco S. Carzaniga</strong><span>International Business Machines</span></li>
+<li><strong>Girish Narayanswamy</strong><span>University of Washington</span></li>
+<li><strong>Gregory Holste</strong><span>University of Texas at Austin</span></li>
+<li><strong>Guojun Xiong</strong><span>Harvard University</span></li>
+<li><strong>Haobo Zhang</strong><span>University of Michigan - Ann Arbor</span></li>
+<li><strong>Haoxu Huang</strong><span>New York University</span></li>
+<li><strong>Haoyang Wang</strong><span>University of Texas at Austin</span></li>
+<li><strong>Harshita Sharma</strong><span>Microsoft</span></li>
+<li><strong>Hasan Amin</strong><span>Purdue University</span></li>
+<li><strong>Hee Jung Choi</strong><span>Stanford University</span></li>
+<li><strong>Helen Zhou</strong><span>Apple</span></li>
+<li><strong>Hsin-Ling Hsu</strong><span>Academia Sinica</span></li>
+<li><strong>Huang-Ru Liao</strong><span>NVIDIA</span></li>
+<li><strong>Huimin Xu</strong><span>University of Texas at Austin</span></li>
+<li><strong>Iain Nash</strong><span>Edge Hill University</span></li>
+<li><strong>Jenny Xu</strong><span>Stanford University</span></li>
+<li><strong>Jiaee Cheong</strong><span>Harvard University</span></li>
+<li><strong>Jiawen Chen</strong><span>University of North Carolina at Chapel Hill</span></li>
+<li><strong>Jin Cui</strong><span>Imperial College London</span></li>
+<li><strong>Jindong Tian</strong><span>East China Normal University</span></li>
+<li><strong>Jinrui Fang</strong><span>University of Texas at Austin</span></li>
+<li><strong>Jitao Xu</strong><span>Old Dominion University</span></li>
+<li><strong>Joseph Paul Cohen</strong><span>Amazon</span></li>
+<li><strong>Josiah Aklilu</strong><span>Stanford University</span></li>
+<li><strong>Justin Xu</strong><span>University of Oxford</span></li>
+<li><strong>Kaidi Xu</strong><span>City University of Hong Kong</span></li>
+<li><strong>Kethmi Hirushini Hettige</strong><span>Nanyang Technological University</span></li>
+<li><strong>Kevin Ta</strong><span>Yale University</span></li>
+<li><strong>Kuk Jin Jang</strong><span>University of Pennsylvania</span></li>
+<li><strong>Kyle Cox</strong><span>Melange</span></li>
+<li><strong>Kyungmin Jeon</strong><span>Seoul National University</span></li>
+<li><strong>Lavanya Gupta</strong><span>J.P. Morgan Chase</span></li>
+<li><strong>Leopoldo Julian Lechuga Lopez</strong><span>New York University</span></li>
+<li><strong>Lingyun Wang</strong><span>University of Pittsburgh</span></li>
+<li><strong>Liu Chen</strong><span>Harvard University</span></li>
+<li><strong>Liwen Sun</strong><span>Carnegie Mellon University</span></li>
+<li><strong>Lovedeep Gondara</strong><span>University of British Columbia</span></li>
+<li><strong>Luyang Luo</strong><span>Harvard Medical School</span></li>
+<li><strong>Mahdi Arab Loodaricheh</strong><span>City University of New York</span></li>
+<li><strong>Mahmud Wasif Nafee</strong><span>Rensselaer Polytechnic Institute</span></li>
+<li><strong>Martin Norgaard</strong><span>University of Copenhagen</span></li>
+<li><strong>Maryam Khalid</strong><span>Amazon</span></li>
+<li><strong>Meng Xia</strong><span>Duke University</span></li>
+<li><strong>Mengdi Huai</strong><span>Iowa State University</span></li>
+<li><strong>Mengzhou Hu</strong><span>University of California, San Diego</span></li>
+<li><strong>Miguel Angel Fuentes Hernandez</strong><span>Stanford University</span></li>
+<li><strong>Miko Rimer</strong><span>Stanford University</span></li>
+<li><strong>Milos Vukadinovic</strong><span>University of California, Los Angeles</span></li>
+<li><strong>Mingfei Lu</strong><span>University of Technology Sydney</span></li>
+<li><strong>Monica Munnangi</strong><span>Northeastern University</span></li>
+<li><strong>Mozhgan Saeidi</strong><span>Stanford University</span></li>
+<li><strong>Muhammad Osama Khan</strong><span>Amazon</span></li>
+<li><strong>Nathalie Maria Kirch</strong><span>King's College London</span></li>
+<li><strong>Neeraj Kumar</strong><span>Memorial Sloan Kettering Cancer Centre</span></li>
+<li><strong>Nils Palumbo</strong><span>University of Wisconsin - Madison</span></li>
+<li><strong>Paloma Rabaey</strong><span>Ghent University</span></li>
+<li><strong>Pavan Reddy</strong><span>George Washington University</span></li>
+<li><strong>Pengcheng Jiang</strong><span>University of Illinois at Urbana-Champaign</span></li>
+<li><strong>Pierrette MAHORO MASTEL</strong><span>Carnegie Mellon University</span></li>
+<li><strong>Prajwal Kailas</strong><span>Brigham and Women's Hospital</span></li>
+<li><strong>Pranav Kulkarni</strong><span>University of Maryland, College Park</span></li>
+<li><strong>Qinru Li</strong><span>University of California, San Diego</span></li>
+<li><strong>Ricardo Santos</strong><span>Fraunhofer Portugal AICOS</span></li>
+<li><strong>Riqiang Gao</strong><span>Siemens Healthineers</span></li>
+<li><strong>Ruiyi Wang</strong><span>University of California, San Diego</span></li>
+<li><strong>Runyu Gao</strong><span>Johns Hopkins University</span></li>
+<li><strong>Sajib Acharjee Dip</strong><span>Virginia Polytechnic Institute and State University</span></li>
+<li><strong>Samuel Schmidgall</strong><span>Johns Hopkins University</span></li>
+<li><strong>Sayantan Kumar</strong><span>National Institutes of Health</span></li>
+<li><strong>SayedMorteza Malaekeh</strong><span>University of Texas at Austin</span></li>
+<li><strong>Seongsu Bae</strong><span>Korea Advanced Institute of Science and Technology</span></li>
+<li><strong>Seungjun Jang</strong><span>Seoul National University</span></li>
+<li><strong>Seungjun Yi</strong><span>University of Texas at Austin</span></li>
+<li><strong>Shantanu Ghosh</strong><span>Boston University</span></li>
+<li><strong>Shiru Wang</strong><span>Dartmouth College</span></li>
+<li><strong>Shiva Kaul</strong><span>Harvard Medical School</span></li>
+<li><strong>Shuai Niu</strong><span>University of Hong Kong</span></li>
+<li><strong>Siyu He</strong><span>Stanford University</span></li>
+<li><strong>Song Wang</strong><span>University of Texas at Austin</span></li>
+<li><strong>Suhana Bedi</strong><span>Stanford University</span></li>
+<li><strong>Thang T. Truong</strong><span>Auburn University</span></li>
+<li><strong>Thomas Ferté</strong><span>University of Bordeaux</span></li>
+<li><strong>Tianhao Li</strong><span>University of Texas at Austin</span></li>
+<li><strong>Wangjiaxuan Xin</strong><span>University of North Carolina at Charlotte</span></li>
+<li><strong>Wanniarachchi Kankanamge Malithi Mithsara</strong><span>Southern Illinois University</span></li>
+<li><strong>Wei Dai</strong><span>Massachusetts Institute of Technology</span></li>
+<li><strong>Weili Jiang</strong><span>Southwest Jiaotong University</span></li>
+<li><strong>Weiming Ren</strong><span>University of Waterloo</span></li>
+<li><strong>Weishen Pan</strong><span>Weill Cornell Medicine, Cornell University</span></li>
+<li><strong>Wenlong Deng</strong><span>University of British Columbia</span></li>
+<li><strong>Wenqi Shi</strong><span>University of Texas Southwestern Medical Center</span></li>
+<li><strong>William Boag</strong><span>MassHealth</span></li>
+<li><strong>Xiaolong Luo</strong><span>Harvard University</span></li>
+<li><strong>Xiaoman Zhang</strong><span>Harvard Medical School</span></li>
+<li><strong>Xiaotang Gai</strong><span>Zhejiang University</span></li>
+<li><strong>XIAOYAN SHEN</strong><span>University of Texas at Arlington</span></li>
+<li><strong>Xidong Wang</strong><span>The Chinese University of Hong Kong</span></li>
+<li><strong>Xu Cao</strong><span>Stealth Mode Startup</span></li>
+<li><strong>Xueqi Guo</strong><span>Siemens Healthineers</span></li>
+<li><strong>Yang Liu</strong><span>University of Oulu</span></li>
+<li><strong>Yanjun Gao</strong><span>University of Colorado Anschutz Medical Campus</span></li>
+<li><strong>Yen Nhi Truong Vu</strong><span>Whiterabbit.ai</span></li>
+<li><strong>Yeonsu Kwon</strong><span>Korea Advanced Institute of Science &amp; Technology</span></li>
+<li><strong>Yi Bu</strong><span>Peking University</span></li>
+<li><strong>Yiğit Narter</strong><span>Bilkent University</span></li>
+<li><strong>Yihe Wang</strong><span>University of North Carolina at Charlotte</span></li>
+<li><strong>Yikun Han</strong><span>University of Illinois at Urbana-Champaign</span></li>
+<li><strong>Yilin Ye</strong><span>Columbia University</span></li>
+<li><strong>Ying Li</strong><span>Curtin University of Technology</span></li>
+<li><strong>Yiwei Li</strong><span>Harvard University</span></li>
+<li><strong>Yixin Wang</strong><span>Stanford University</span></li>
+<li><strong>Yixiong Chen</strong><span>Johns Hopkins University</span></li>
+<li><strong>YongGeon Lee</strong><span>University of Texas at Austin</span></li>
+<li><strong>Yu Fu</strong><span>University of California, Riverside</span></li>
+<li><strong>Yuan Yuan</strong><span>Boston College</span></li>
+<li><strong>Yujia Liu</strong><span>University of California, San Diego</span></li>
+<li><strong>Yuli Wang</strong><span>Icahn School of Medicine at Mount Sinai</span></li>
+<li><strong>Yunsoo Kim</strong><span>University College London</span></li>
+<li><strong>Yun-Wei Chu</strong><span>Axon</span></li>
+<li><strong>Yusu Fang</strong><span>Peking University</span></li>
+<li><strong>Yuwei Zhang</strong><span>Computer Laboratory</span></li>
+<li><strong>Zepeng Frazier Huo</strong><span>Stanford University</span></li>
+<li><strong>Zhenbang Wu</strong><span>University of Illinois Urbana Champaign</span></li>
+<li><strong>Zhihan Zheng</strong><span>Peking University</span></li>
+<li><strong>Zihan Wang</strong><span>University of Washington</span></li>
+<li><strong>Ziheng Chen</strong><span>University of Texas at Austin</span></li>
+<li><strong>Zijiao Chen</strong><span>National University of Singaore</span></li>
+<li><strong>Zijie Liu</strong><span>University of North Carolina at Chapel Hill</span></li>
+<li><strong>Zixin Ding</strong><span>University of Chicago</span></li></ul></div>
     </section>
 
   </main>
+
 
   <footer id="sponsors">
     <div class="container">
       <div class="footer-sponsors" aria-label="Workshop sponsors">
         <div class="footer-sponsors-title">Sponsors</div>
-        <div class="sponsor-grid">
-          <div class="sponsor-logo sponsor-logo-tencent" aria-label="Tencent">
-            <img class="sponsor-logo-img" src="./public/sponsors/tencent-logo.png" alt="Tencent 腾讯">
-          </div>
+        <div class="sponsor-grid genai-sponsor-grid">
+          <a href="https://www.ifml.institute/" target="_blank" rel="noopener noreferrer"><img src="public/data/images/sponsor/IFML_Institute_for_Foundations_of_Machine_Learning_logo.svg" alt="IFML Institute for Foundations of Machine Learning"></a>
+          <a href="https://phti.org/" target="_blank" rel="noopener noreferrer"><img src="public/data/images/sponsor/phti.svg" alt="Peterson Health Technology Institute"></a>
+          <a href="https://www.kaiserpermanente.org/" target="_blank" rel="noopener noreferrer"><img src="public/data/images/sponsor/Kaiser.svg" alt="Kaiser Permanente"></a>
+          <a href="https://www.hippocraticai.com/" target="_blank" rel="noopener noreferrer"><img src="public/data/images/sponsor/hipp.webp" alt="Hippocratic AI"></a>
         </div>
       </div>
-      <blockquote class="contact-blockquote">
-        Foundations, infrastructure, and personalization for trustworthy personal AI agents.
-      </blockquote>
-      <p class="footer-text">&copy; PAS @ NeurIPS 2026. All rights reserved.</p>
+      <div class="genai-footer-columns">
+        <div><strong>Submission</strong><a href="https://openreview.net/group?id=NeurIPS.cc/2025/Workshop/GenAI4Health" target="_blank" rel="noopener noreferrer">OpenReview Submission Portal</a></div>
+        <div><strong>Past Events</strong><a href="https://genai4health.github.io/2024-NeurIPS/" target="_blank" rel="noopener noreferrer">GenAI4Health @ NeurIPS 2024</a><a href="https://sites.google.com/view/genai4health-aaai-2025" target="_blank" rel="noopener noreferrer">GenAI4Health @ AAAI 2025</a></div>
+        <div><strong>Important Dates</strong><span>Submissions: Sep 5, 2025</span><span>Notifications: Sep 22, 2025</span><span>Camera-ready: Oct 31, 2025</span><span>Workshop: Dec 6, 2025</span></div>
+        <div><strong>Contact Us</strong><a href="mailto:jiaweixu@utexas.edu">Jiawei Xu: jiaweixu@utexas.edu</a><a href="mailto:xtiange@stanford.edu">Tiange Xiang: xtiange@stanford.edu</a><a href="https://x.com/GenAI4Health" target="_blank" rel="noopener noreferrer">@GenAI4Health on X</a></div>
+      </div>
+      <p class="footer-text">Copyright © NeurIPS 2025. All rights reserved | The Second Workshop on GenAI for Health: Potential, Trust, and Policy Compliance</p>
     </div>
   </footer>
 

@@ -323,6 +323,679 @@ section {
   border-bottom: 1px solid var(--border);
 }
 
+.health-hero {
+  isolation: isolate;
+  background: #020d0a;
+  border-bottom-color: rgba(190, 229, 97, 0.22);
+}
+
+.health-hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #020d0a url("../../public/genai-health-hero.png") center 62% / cover no-repeat;
+}
+
+.health-hero-art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 900px;
+}
+
+.health-illustration-source {
+  display: none !important;
+}
+
+.health-wave-overlay {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: min(31%, 265px) !important;
+  overflow: visible;
+}
+
+.health-wave-line {
+  fill: none;
+  stroke: #c8ec68;
+  stroke-linecap: round;
+  stroke-width: 1.35;
+  stroke-dasharray: 5 13;
+  opacity: 0.42;
+  animation: health-wave-flow 13s linear infinite;
+}
+
+.health-wave-line-two {
+  stroke-width: 1;
+  opacity: 0.28;
+  animation-duration: 17s;
+  animation-direction: reverse;
+}
+
+.health-wave-line-three {
+  stroke-width: 0.9;
+  opacity: 0.2;
+  animation-duration: 21s;
+}
+
+.health-hero .container {
+  z-index: 1;
+}
+
+.health-hero .display-text-palatino,
+.health-hero .hero-workshop-text {
+  color: #f2f8df;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.82);
+}
+
+.health-network path,
+.health-network circle,
+.health-profile,
+.health-circuit,
+.health-brain-nodes circle,
+.health-icon circle,
+.health-icon path,
+.health-clinical-panel rect,
+.health-chart,
+.health-lungs,
+.health-shield,
+.health-plus-mark,
+.health-projection ellipse,
+.health-scan-line,
+.health-data-streams path {
+  fill: none;
+  stroke: #ffffff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.health-network path {
+  stroke-width: 1.6;
+  opacity: 0.54;
+}
+
+.health-network circle {
+  fill: #ffffff;
+  stroke: #d8f0ff;
+  stroke-width: 2;
+}
+
+.health-network-left,
+.health-network-right {
+  opacity: 0.72;
+}
+
+.health-network-left {
+  animation: health-drift-left 15s ease-in-out infinite alternate;
+}
+
+.health-network-right {
+  animation: health-drift-right 17s ease-in-out infinite alternate;
+}
+
+.health-profile {
+  fill: rgba(178, 222, 248, 0.16);
+  stroke-width: 2.2;
+  opacity: 0.9;
+}
+
+.health-circuit {
+  stroke: #e7f8ff;
+  stroke-width: 1.7;
+  opacity: 0.94;
+}
+
+.health-brain-nodes circle {
+  fill: #ffffff;
+  stroke-width: 1.5;
+}
+
+.health-brain text {
+  fill: #f8fdff;
+  font: 600 52px Inter, Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+.health-brain {
+  animation: health-breathe 7s ease-in-out infinite;
+}
+
+.health-medical-icons {
+  opacity: 0.72;
+}
+
+.health-icon circle {
+  fill: rgba(255, 255, 255, 0.13);
+  stroke-width: 1.8;
+}
+
+.health-icon path {
+  stroke-width: 2.4;
+}
+
+.health-icon-heart,
+.health-icon-plus {
+  animation: health-pulse 4.2s ease-in-out infinite;
+}
+
+.health-icon-dna,
+.health-icon-pill {
+  animation: health-float 6.5s ease-in-out infinite alternate;
+}
+
+.health-clinical-panel {
+  fill: rgba(255, 255, 255, 0.08);
+  stroke: url(#panelStroke);
+  stroke-width: 1.8;
+  opacity: 0.78;
+}
+
+.health-clinical-panel rect:not(:first-child) {
+  fill: rgba(255, 255, 255, 0.2);
+  stroke-width: 1;
+}
+
+.health-plus-mark,
+.health-chart,
+.health-lungs,
+.health-shield {
+  stroke-width: 2.3;
+}
+
+.health-clinical-panel-top {
+  animation: health-panel-top 8s ease-in-out infinite alternate;
+}
+
+.health-clinical-panel-bottom {
+  animation: health-panel-bottom 9s ease-in-out infinite alternate;
+}
+
+.health-projection {
+  opacity: 0.88;
+}
+
+.health-projection ellipse {
+  stroke-width: 1.5;
+}
+
+.health-projection ellipse:nth-child(1) {
+  animation: health-ring-expand 5.2s ease-out infinite;
+  transform-origin: 1354px 755px;
+}
+
+.health-projection ellipse:nth-child(2) {
+  animation: health-ring-expand 5.2s ease-out 1.2s infinite;
+  transform-origin: 1354px 755px;
+}
+
+.health-scan-line {
+  stroke-width: 2;
+  stroke-dasharray: 9 15;
+  animation: health-scan 3.6s linear infinite;
+}
+
+.health-data-streams {
+  opacity: 0.63;
+}
+
+.health-data-streams path {
+  stroke-width: 1.2;
+  stroke-dasharray: 4 10;
+  animation: health-data-flow 10s linear infinite;
+}
+
+.health-data-streams path:nth-child(2) {
+  animation-duration: 12s;
+  animation-direction: reverse;
+}
+
+.health-data-streams path:nth-child(3) {
+  animation-duration: 14s;
+}
+
+html[data-theme="dark"] .health-hero {
+  background: #020d0a;
+  border-bottom-color: rgba(190, 229, 97, 0.22);
+}
+
+html[data-theme="dark"] .health-hero-art {
+  opacity: 1;
+  filter: none;
+}
+
+html[data-theme="dark"] .health-hero .display-text-palatino,
+html[data-theme="dark"] .health-hero .hero-workshop-text {
+  color: #f2f8df;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.82);
+}
+
+@keyframes health-drift-left {
+  to { transform: translate(12px, -9px); }
+}
+
+@keyframes health-drift-right {
+  to { transform: translate(-14px, 11px); }
+}
+
+@keyframes health-breathe {
+  50% { opacity: 0.74; transform: translateY(-5px) scale(1.012); }
+}
+
+@keyframes health-pulse {
+  50% { opacity: 0.45; transform: scale(1.045); transform-origin: center; }
+}
+
+@keyframes health-float {
+  to { transform: translateY(-10px); }
+}
+
+@keyframes health-panel-top {
+  to { transform: translate(-8px, 6px); opacity: 0.64; }
+}
+
+@keyframes health-panel-bottom {
+  to { transform: translate(9px, -7px); opacity: 0.64; }
+}
+
+@keyframes health-ring-expand {
+  0%, 100% { opacity: 0.18; transform: scale(0.92); }
+  50% { opacity: 0.92; transform: scale(1.03); }
+}
+
+@keyframes health-scan {
+  to { stroke-dashoffset: -96; }
+}
+
+@keyframes health-data-flow {
+  to { stroke-dashoffset: -168; }
+}
+
+@keyframes health-wave-flow {
+  to { stroke-dashoffset: -216; }
+}
+
+@media (max-width: 768px) {
+  .health-hero-art {
+    background-position: 36% 62%;
+  }
+
+  .health-wave-overlay {
+    height: min(27%, 190px) !important;
+  }
+
+  .health-brain,
+  .health-medical-icons {
+    opacity: 0.58;
+  }
+
+  .health-clinical-panel {
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .health-hero-art *,
+  .health-hero-art svg {
+    animation: none !important;
+  }
+}
+
+/* GenAI4Health 2025 content migration */
+.genai-section-copy {
+  max-width: var(--container-max-width);
+}
+
+.genai-section-copy p,
+.genai-section-copy li {
+  color: var(--text-muted);
+}
+
+.genai-list {
+  margin: 0 0 var(--space-6);
+  padding-left: 1.35rem;
+  list-style: disc;
+}
+
+.genai-list li + li {
+  margin-top: var(--space-3);
+}
+
+.genai-track-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-4) 0 var(--space-7);
+}
+
+.genai-track-grid article {
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.genai-track-grid h4 {
+  color: var(--color-primary);
+}
+
+.genai-track-grid p {
+  text-align: left;
+}
+
+.genai-agenda-heading {
+  padding: var(--space-4) 0 var(--space-2);
+  color: var(--color-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.genai-agenda-break .schedule-entry-session {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.genai-people-section {
+  padding-top: 0;
+}
+
+.genai-subsection-title {
+  margin-bottom: var(--space-5);
+}
+
+.genai-people-grid {
+  align-items: stretch;
+}
+
+.genai-people-grid .organizer-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  color: inherit;
+  text-decoration: none;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.genai-people-grid .organizer-card:hover {
+  color: inherit;
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.genai-profile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.genai-profile-overlay i {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  transition: transform var(--transition-normal), background-color var(--transition-normal), color var(--transition-normal);
+}
+
+.genai-people-grid .organizer-card:hover .genai-profile-overlay {
+  opacity: 1;
+}
+
+.genai-people-grid .organizer-card:hover .genai-profile-overlay i {
+  background: var(--button);
+  color: var(--accent-contrast);
+  transform: scale(1.1);
+}
+
+.genai-people-grid .organizer-photo {
+  transition: transform var(--transition-normal);
+}
+
+.genai-people-grid .organizer-card:hover .organizer-photo {
+  transform: scale(1.03);
+}
+
+#speakers .genai-people-grid {
+  grid-template-columns: repeat(auto-fit, 200px);
+  justify-content: center;
+  gap: var(--space-5);
+  max-width: calc(4 * 200px + 3 * var(--space-5));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#speakers .genai-speaker-card {
+  width: 200px;
+  padding: 0;
+}
+
+#speakers .genai-speaker-card .organizer-photo {
+  width: 200px;
+  height: 267px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--surface-muted);
+  object-fit: contain;
+}
+
+#speakers .genai-speaker-card .organizer-info {
+  min-height: 4.6rem;
+  padding: var(--space-3) var(--space-4);
+}
+
+#organizers .genai-people-grid,
+.genai-people-section .genai-people-grid {
+  grid-template-columns: repeat(auto-fit, 120px);
+  justify-content: center;
+  gap: var(--space-4);
+  max-width: calc(6 * 120px + 5 * var(--space-4));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#organizers .genai-people-grid .organizer-card,
+.genai-people-section .genai-people-grid .organizer-card {
+  width: 120px;
+  padding: 0;
+}
+
+#organizers .genai-people-grid .organizer-photo,
+.genai-people-section .genai-people-grid .organizer-photo {
+  width: 120px;
+  height: 160px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--surface-muted);
+  object-fit: contain;
+}
+
+#organizers .genai-people-grid .organizer-info,
+.genai-people-section .genai-people-grid .organizer-info {
+  min-height: 4.4rem;
+  padding: var(--space-3) var(--space-2);
+}
+
+#organizers .organizer-name,
+.genai-people-section .organizer-name {
+  font-size: var(--font-size-sm);
+}
+
+#organizers .organizer-org,
+.genai-people-section .organizer-org {
+  font-size: var(--font-size-xs);
+  line-height: 1.35;
+}
+
+.genai-talk-title {
+  margin-top: var(--space-3);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.4;
+}
+
+.genai-card-copy {
+  margin-top: var(--space-3);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.58;
+  text-align: left;
+}
+
+.genai-pc-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: var(--space-5) 0 0;
+  padding: 1px;
+  list-style: none;
+  background: var(--border);
+}
+
+.genai-pc-list li {
+  min-width: 0;
+  padding: var(--space-4);
+  background: var(--surface);
+}
+
+.genai-pc-list strong,
+.genai-pc-list span {
+  display: block;
+}
+
+.genai-pc-list strong {
+  color: var(--text);
+  font-size: var(--font-size-sm);
+}
+
+.genai-pc-list span {
+  margin-top: var(--space-1);
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.4;
+}
+
+.genai-sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.genai-sponsor-grid a {
+  display: grid;
+  min-height: 84px;
+  place-items: center;
+}
+
+.genai-sponsor-grid img {
+  display: block;
+  max-width: 100%;
+  max-height: 68px;
+  object-fit: contain;
+}
+
+.genai-footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-7);
+}
+
+.genai-footer-columns div,
+.genai-footer-columns a,
+.genai-footer-columns span,
+.genai-footer-columns strong {
+  display: block;
+}
+
+.genai-footer-columns strong {
+  margin-bottom: var(--space-2);
+  color: var(--footer-text);
+}
+
+.genai-footer-columns a,
+.genai-footer-columns span {
+  margin-top: var(--space-2);
+  color: var(--footer-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+.genai-footer-columns a:hover {
+  color: var(--footer-text);
+}
+
+@media (max-width: 768px) {
+  .genai-track-grid,
+  .genai-pc-list,
+  .genai-footer-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .genai-sponsor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #speakers .genai-people-grid {
+    grid-template-columns: repeat(2, 140px);
+    max-width: calc(2 * 140px + var(--space-4));
+    gap: var(--space-4);
+  }
+
+  #speakers .genai-speaker-card,
+  #speakers .genai-speaker-card .organizer-photo {
+    width: 140px;
+  }
+
+  #speakers .genai-speaker-card .organizer-photo {
+    height: 187px;
+  }
+
+  #organizers .genai-people-grid,
+  .genai-people-section .genai-people-grid {
+    grid-template-columns: repeat(3, 90px);
+    max-width: calc(3 * 90px + 2 * var(--space-2));
+    gap: var(--space-2);
+  }
+
+  #organizers .genai-people-grid .organizer-card,
+  .genai-people-section .genai-people-grid .organizer-card,
+  #organizers .genai-people-grid .organizer-photo,
+  .genai-people-section .genai-people-grid .organizer-photo {
+    width: 90px;
+  }
+
+  #organizers .genai-people-grid .organizer-photo,
+  .genai-people-section .genai-people-grid .organizer-photo {
+    height: 120px;
+  }
+}
+
 .hero .container {
   display: flex;
   flex-direction: column !important;
@@ -1235,6 +1908,28 @@ html[data-theme="dark"] .schedule-rail span {
   position: relative;
   width: 100%;
 }
+
+.section-header-component::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: var(--border);
+}
+
+.section-header-component::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  z-index: 1;
+  width: 56px;
+  height: 3px;
+  background: #b8d85b;
+}
+
 .section-header-row {
   box-sizing: border-box;
   display: flex;
@@ -1439,12 +2134,18 @@ html[data-theme="dark"] .schedule-rail span {
   line-height: 1.08;
 }
 
-.display-text-palatino span:first-child {
-  font-size: clamp(2.7rem, 6.4vw, 5.25rem);
+.display-text-palatino .hero-title-top {
+  font-size: 3rem;
 }
 
-.display-text-palatino span:last-child {
-  font-size: clamp(1.45rem, 3.35vw, 2.85rem);
+.display-text-palatino .hero-title-main {
+  font-size: 4.5rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.display-text-palatino .hero-title-subtitle {
+  font-size: 1.8rem;
   font-weight: 700;
 }
 
@@ -1799,11 +2500,14 @@ html[data-theme="dark"] .hero-workshop-text {
     gap: 0.55rem;
     margin-bottom: 1.2rem;
   }
-  .display-text-palatino span:first-child {
-    font-size: clamp(2.25rem, 13vw, 3.6rem);
+  .display-text-palatino .hero-title-top {
+    font-size: 2rem;
   }
-  .display-text-palatino span:last-child {
-    font-size: clamp(1.18rem, 6.4vw, 1.85rem);
+  .display-text-palatino .hero-title-main {
+    font-size: 2.6rem;
+  }
+  .display-text-palatino .hero-title-subtitle {
+    font-size: 1.18rem;
   }
   .hero-workshop-text {
     margin-top: 1.05rem;

@@ -661,6 +661,12 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
   list-style: disc;
 }
 
+/* Keep the workshop's accent color consistent across all bullet lists. */
+main ul li::marker,
+footer ul li::marker {
+  color: #b8d85b;
+}
+
 .genai-list li + li {
   margin-top: var(--space-3);
 }
@@ -773,6 +779,13 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
   transition: transform var(--transition-normal);
 }
 
+.genai-people-grid .genai-empty-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--surface-muted);
+}
+
 .genai-people-grid .organizer-card:hover .organizer-photo {
   transform: scale(1.03);
 }
@@ -798,7 +811,13 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
   border: 0;
   border-radius: 0;
   background: var(--surface-muted);
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
+}
+
+#speakers .genai-speaker-card .genai-empty-photo {
+  width: 200px;
+  height: 267px;
 }
 
 #speakers .genai-speaker-card .organizer-info {
@@ -830,7 +849,14 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
   border: 0;
   border-radius: 0;
   background: var(--surface-muted);
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
+}
+
+#organizers .genai-people-grid .genai-empty-photo,
+.genai-people-section .genai-people-grid .genai-empty-photo {
+  width: 120px;
+  height: 160px;
 }
 
 #organizers .genai-people-grid .organizer-info,
@@ -897,6 +923,30 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
   color: var(--text-muted);
   font-size: var(--font-size-xs);
   line-height: 1.4;
+}
+
+.genai-pc-status {
+  display: inline-block;
+  width: fit-content;
+  margin-top: var(--space-3);
+  padding: 0.2rem 0.45rem;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.genai-pc-status-confirmed {
+  color: #21724a;
+  background: #edf8f0;
+}
+
+.genai-pc-status-pending {
+  color: #8a5b11;
+  background: #fff7e7;
 }
 
 .genai-sponsor-grid {
@@ -968,11 +1018,13 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
   }
 
   #speakers .genai-speaker-card,
-  #speakers .genai-speaker-card .organizer-photo {
+  #speakers .genai-speaker-card .organizer-photo,
+  #speakers .genai-speaker-card .genai-empty-photo {
     width: 140px;
   }
 
-  #speakers .genai-speaker-card .organizer-photo {
+  #speakers .genai-speaker-card .organizer-photo,
+  #speakers .genai-speaker-card .genai-empty-photo {
     height: 187px;
   }
 
@@ -986,8 +1038,15 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
   #organizers .genai-people-grid .organizer-card,
   .genai-people-section .genai-people-grid .organizer-card,
   #organizers .genai-people-grid .organizer-photo,
-  .genai-people-section .genai-people-grid .organizer-photo {
+  .genai-people-section .genai-people-grid .organizer-photo,
+  #organizers .genai-people-grid .genai-empty-photo,
+  .genai-people-section .genai-people-grid .genai-empty-photo {
     width: 90px;
+  }
+
+  #organizers .genai-people-grid .genai-empty-photo,
+  .genai-people-section .genai-people-grid .genai-empty-photo {
+    height: 120px;
   }
 
   #organizers .genai-people-grid .organizer-photo,

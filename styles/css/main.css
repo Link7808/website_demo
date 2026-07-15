@@ -655,6 +655,19 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
   color: var(--text-muted);
 }
 
+.genai-section-copy code {
+  display: inline-block;
+  padding: 0.12rem 0.32rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--surface-muted);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.88em;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
 .genai-list {
   margin: 0 0 var(--space-6);
   padding-left: 1.35rem;

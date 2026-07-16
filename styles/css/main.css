@@ -885,6 +885,17 @@ footer ul li::marker {
   height: 187px;
 }
 
+.genai-placeholder-card {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  cursor: default;
+}
+
+.genai-placeholder-card:hover {
+  transform: none;
+}
+
 .genai-people-section .genai-people-grid {
   grid-template-columns: repeat(auto-fit, 140px);
   justify-content: start;

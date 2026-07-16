@@ -3,7 +3,7 @@
 (function() {
   "use strict";
 
-  const themeStorageKey = 'pas-theme';
+  const themeStorageKey = 'genai4health-theme';
   const themeChoices = ['light', 'dark'];
 
   const getThemeChoice = () => {

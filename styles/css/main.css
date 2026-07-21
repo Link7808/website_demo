@@ -680,6 +680,60 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
   margin-top: var(--space-6);
 }
 
+.genai-submission-module {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-6);
+  align-items: center;
+  margin: var(--space-5) 0 var(--space-7);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--border-radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.genai-submission-module h3 {
+  margin: 0;
+}
+
+.genai-submission-module p {
+  margin: var(--space-2) 0 0;
+  text-align: left;
+}
+
+.genai-submission-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: flex-end;
+}
+
+.genai-submission-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--button);
+  border-radius: 4px;
+  background: var(--button);
+  color: var(--accent-contrast);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.genai-submission-actions a:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-contrast);
+  transform: translateY(-1px);
+}
+
 .genai-list {
   margin: 0 0 var(--space-6);
   padding-left: 1.35rem;
@@ -1076,6 +1130,14 @@ footer ul li::marker {
   .genai-track-grid,
   .genai-footer-columns {
     grid-template-columns: 1fr;
+  }
+
+  .genai-submission-module {
+    grid-template-columns: 1fr;
+  }
+
+  .genai-submission-actions {
+    justify-content: flex-start;
   }
 
   .genai-pc-list {
@@ -2372,6 +2434,7 @@ html[data-theme="dark"] .hero-workshop-text {
 }
 
 .footer-text {
+  margin-top: var(--space-5);
   text-align: center;
   color: var(--footer-muted);
 }

@@ -621,7 +621,8 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
 
 @media (max-width: 768px) {
   .health-hero-art {
-    background-position: 36% 62%;
+    background-image: url("../../public/genai-health-hero-mobile.png");
+    background-position: center center;
   }
 
   .health-wave-overlay {
@@ -674,6 +675,10 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
 
 #call-for-papers .genai-cfp-camera-ready {
   margin-top: var(--space-7);
+}
+
+#call-for-papers .genai-cfp-important-dates {
+  margin-top: var(--space-6);
 }
 
 #call-for-papers .genai-cfp-deadline-note {

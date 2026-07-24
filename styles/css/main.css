@@ -763,25 +763,53 @@ footer ul li::marker {
 
 .genai-track-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-4);
+  grid-template-columns: 1fr;
   margin: var(--space-4) 0 var(--space-7);
 }
 
-.genai-track-grid article {
-  padding: var(--space-5);
-  border: 1px solid var(--border);
-  border-radius: var(--border-radius-md);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
+.genai-track-panel {
+  display: grid;
+  grid-template-columns: minmax(175px, 0.34fr) minmax(0, 1fr);
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--border);
 }
 
-.genai-track-grid h4 {
+.genai-track-panel:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.genai-track-panel h4 {
+  margin: 0 0 var(--space-2);
   color: var(--color-primary);
 }
 
-.genai-track-grid p {
+.genai-track-page-limit {
+  display: inline-block;
+  padding: 0.2rem 0.45rem;
+  background: var(--accent-soft);
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.genai-track-panel-content > * + * {
+  margin-top: var(--space-4);
+}
+
+.genai-track-panel p {
   text-align: left;
+}
+
+.genai-section-copy .genai-track-summary {
+  color: var(--text);
+  font-weight: var(--font-weight-semibold);
+}
+
+.genai-track-panel h5 {
+  margin: 0 0 var(--space-2);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
 }
 
 .genai-agenda-heading {
@@ -944,22 +972,22 @@ footer ul li::marker {
 }
 
 #organizers .genai-people-grid {
-  grid-template-columns: repeat(4, 154px);
+  grid-template-columns: repeat(4, 200px);
   justify-content: center;
   gap: var(--space-2);
-  max-width: calc(4 * 154px + 3 * var(--space-2));
+  max-width: calc(4 * 200px + 3 * var(--space-2));
   margin-right: auto;
   margin-left: auto;
 }
 
 #organizers .genai-people-grid .organizer-card {
-  width: 154px;
+  width: 200px;
   padding: 0;
 }
 
 #organizers .genai-people-grid .organizer-photo {
-  width: 154px;
-  height: 206px;
+  width: 200px;
+  height: 240px;
   margin: 0;
   border: 0;
   border-radius: 0;
@@ -969,8 +997,8 @@ footer ul li::marker {
 }
 
 #organizers .genai-people-grid .genai-empty-photo {
-  width: 154px;
-  height: 206px;
+  width: 200px;
+  height: 240px;
 }
 
 .genai-placeholder-card {
@@ -985,27 +1013,27 @@ footer ul li::marker {
 }
 
 .genai-people-section .genai-people-grid {
-  grid-template-columns: repeat(auto-fit, 154px);
+  grid-template-columns: repeat(auto-fit, 200px);
   justify-content: center;
   gap: var(--space-4);
-  max-width: calc(6 * 154px + 5 * var(--space-4));
+  max-width: calc(6 * 200px + 5 * var(--space-4));
   margin-right: auto;
   margin-left: auto;
 }
 
 #student-organizers .genai-people-grid {
-  grid-template-columns: repeat(3, 154px);
-  max-width: calc(3 * 154px + 2 * var(--space-4));
+  grid-template-columns: repeat(3, 200px);
+  max-width: calc(3 * 200px + 2 * var(--space-4));
 }
 
 .genai-people-section .genai-people-grid .organizer-card {
-  width: 154px;
+  width: 200px;
   padding: 0;
 }
 
 .genai-people-section .genai-people-grid .organizer-photo {
-  width: 154px;
-  height: 206px;
+  width: 200px;
+  height: 240px;
   margin: 0;
   border: 0;
   border-radius: 0;
@@ -1015,8 +1043,8 @@ footer ul li::marker {
 }
 
 .genai-people-section .genai-people-grid .genai-empty-photo {
-  width: 154px;
-  height: 206px;
+  width: 200px;
+  height: 240px;
 }
 
 #organizers .genai-people-grid .organizer-info,
@@ -1182,6 +1210,11 @@ footer ul li::marker {
   .genai-track-grid,
   .genai-footer-columns {
     grid-template-columns: 1fr;
+  }
+
+  .genai-track-panel {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
 
   .genai-people-section-header .section-header-row {

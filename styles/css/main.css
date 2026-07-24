@@ -115,7 +115,7 @@
   --transition-slow: 0.5s ease;
 
   /* Container width */
-  --container-max-width: 1000px;
+  --container-max-width: 900px;
   --container-padding: var(--space-4);
 }
 
@@ -656,6 +656,12 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
   color: var(--text-muted);
 }
 
+#call-for-papers .genai-section-copy > h3 {
+  font-size: 1.375rem;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
 .genai-section-copy code {
   display: inline-block;
   padding: 0.12rem 0.32rem;
@@ -798,6 +804,28 @@ footer ul li::marker {
   margin-bottom: var(--space-5);
 }
 
+.genai-people-section-heading {
+  text-align: center;
+}
+
+.genai-people-section-header .section-header-row {
+  justify-content: center;
+}
+
+.genai-people-section-header {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 0;
+}
+
+.genai-people-section-header::before,
+.genai-people-section-header::after {
+  display: none;
+}
+
 .genai-people-grid {
   align-items: stretch;
 }
@@ -884,7 +912,8 @@ footer ul li::marker {
 }
 
 #speakers .genai-speaker-card {
-  width: 100%;
+  width: 93%;
+  justify-self: center;
   padding: 0;
 }
 
@@ -911,26 +940,26 @@ footer ul li::marker {
 }
 
 #organizers .container {
-  max-width: 1220px;
+  max-width: 1098px;
 }
 
 #organizers .genai-people-grid {
-  grid-template-columns: repeat(8, 140px);
-  justify-content: start;
+  grid-template-columns: repeat(4, 154px);
+  justify-content: center;
   gap: var(--space-2);
-  max-width: calc(8 * 140px + 7 * var(--space-2));
+  max-width: calc(4 * 154px + 3 * var(--space-2));
   margin-right: auto;
-  margin-left: 0;
+  margin-left: auto;
 }
 
 #organizers .genai-people-grid .organizer-card {
-  width: 140px;
+  width: 154px;
   padding: 0;
 }
 
 #organizers .genai-people-grid .organizer-photo {
-  width: 140px;
-  height: 187px;
+  width: 154px;
+  height: 206px;
   margin: 0;
   border: 0;
   border-radius: 0;
@@ -940,8 +969,8 @@ footer ul li::marker {
 }
 
 #organizers .genai-people-grid .genai-empty-photo {
-  width: 140px;
-  height: 187px;
+  width: 154px;
+  height: 206px;
 }
 
 .genai-placeholder-card {
@@ -956,22 +985,27 @@ footer ul li::marker {
 }
 
 .genai-people-section .genai-people-grid {
-  grid-template-columns: repeat(auto-fit, 140px);
-  justify-content: start;
+  grid-template-columns: repeat(auto-fit, 154px);
+  justify-content: center;
   gap: var(--space-4);
-  max-width: calc(6 * 140px + 5 * var(--space-4));
+  max-width: calc(6 * 154px + 5 * var(--space-4));
   margin-right: auto;
-  margin-left: 0;
+  margin-left: auto;
+}
+
+#student-organizers .genai-people-grid {
+  grid-template-columns: repeat(3, 154px);
+  max-width: calc(3 * 154px + 2 * var(--space-4));
 }
 
 .genai-people-section .genai-people-grid .organizer-card {
-  width: 140px;
+  width: 154px;
   padding: 0;
 }
 
 .genai-people-section .genai-people-grid .organizer-photo {
-  width: 140px;
-  height: 187px;
+  width: 154px;
+  height: 206px;
   margin: 0;
   border: 0;
   border-radius: 0;
@@ -981,8 +1015,8 @@ footer ul li::marker {
 }
 
 .genai-people-section .genai-people-grid .genai-empty-photo {
-  width: 140px;
-  height: 187px;
+  width: 154px;
+  height: 206px;
 }
 
 #organizers .genai-people-grid .organizer-info,
@@ -1102,9 +1136,15 @@ footer ul li::marker {
 
 .genai-footer-columns {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: 112px repeat(4, minmax(0, 1fr));
   gap: var(--space-6);
   margin-top: var(--space-7);
+}
+
+.genai-footer-neurips-logo img {
+  display: block;
+  width: 112px;
+  height: auto;
 }
 
 .genai-footer-columns div,
@@ -1122,19 +1162,35 @@ footer ul li::marker {
 .genai-footer-columns a,
 .genai-footer-columns span {
   margin-top: var(--space-2);
-  color: var(--footer-muted);
   font-size: var(--font-size-sm);
   line-height: 1.4;
 }
 
+.genai-footer-columns a {
+  color: #d2b49c;
+}
+
+.genai-footer-columns span {
+  color: var(--footer-muted);
+}
+
 .genai-footer-columns a:hover {
-  color: var(--footer-text);
+  color: #e4c8b1;
 }
 
 @media (max-width: 768px) {
   .genai-track-grid,
   .genai-footer-columns {
     grid-template-columns: 1fr;
+  }
+
+  .genai-people-section-header .section-header-row {
+    align-items: center;
+    text-align: center;
+  }
+
+  .genai-people-section-header {
+    padding-bottom: 0;
   }
 
   .genai-submission-module {
@@ -1154,29 +1210,30 @@ footer ul li::marker {
   }
 
   #speakers .genai-people-grid {
-    grid-template-columns: repeat(2, 140px);
-    max-width: calc(2 * 140px + var(--space-4));
+    grid-template-columns: repeat(2, 130px);
+    max-width: calc(2 * 130px + var(--space-4));
     gap: var(--space-4);
   }
 
   #speakers .genai-speaker-card,
   #speakers .genai-speaker-card .organizer-photo,
   #speakers .genai-speaker-card .genai-empty-photo {
-    width: 140px;
+    width: 130px;
   }
 
   #speakers .genai-speaker-card .organizer-photo,
   #speakers .genai-speaker-card .genai-empty-photo {
-    height: 187px;
+    height: 174px;
   }
 
   #organizers .genai-people-grid,
+  #student-organizers .genai-people-grid,
   .genai-people-section .genai-people-grid {
-    grid-template-columns: repeat(3, 90px);
-    max-width: calc(3 * 90px + 2 * var(--space-2));
+    grid-template-columns: repeat(3, 99px);
+    max-width: calc(3 * 99px + 2 * var(--space-2));
     gap: var(--space-2);
-    justify-content: start;
-    margin-left: 0;
+    justify-content: center;
+    margin-left: auto;
   }
 
   #organizers .genai-people-grid .organizer-card,
@@ -1185,17 +1242,17 @@ footer ul li::marker {
   .genai-people-section .genai-people-grid .organizer-photo,
   #organizers .genai-people-grid .genai-empty-photo,
   .genai-people-section .genai-people-grid .genai-empty-photo {
-    width: 90px;
+    width: 99px;
   }
 
   #organizers .genai-people-grid .genai-empty-photo,
   .genai-people-section .genai-people-grid .genai-empty-photo {
-    height: 120px;
+    height: 132px;
   }
 
   #organizers .genai-people-grid .organizer-photo,
   .genai-people-section .genai-people-grid .organizer-photo {
-    height: 120px;
+    height: 132px;
   }
 }
 
@@ -1777,6 +1834,36 @@ html[data-theme="dark"] .navbar-logo img {
   flex: 1 1 auto;
   min-width: 0;
   gap: 0.75rem;
+}
+
+.hero-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: clamp(1.2rem, 2.8vh, 2rem);
+  padding: 0.65rem 0.9rem;
+  border: 1px solid rgba(190, 229, 97, 0.45);
+  border-radius: 4px;
+  background: rgba(2, 13, 10, 0.58);
+  color: #f2f8df;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  text-decoration: none;
+  text-align: left;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.hero-social-link:hover {
+  border-color: var(--accent);
+  background: rgba(17, 43, 31, 0.82);
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.hero-social-link i {
+  font-size: 1rem;
 }
 
 .navbar-links-group {
@@ -2438,6 +2525,48 @@ html[data-theme="dark"] .hero-workshop-text {
   flex-direction: column;
 }
 
+.bento-topic .bento-title {
+  margin: 0;
+}
+
+.bento-topic .bento-desc {
+  margin: var(--space-2) 0 0;
+}
+
+.genai-topic-details {
+  width: 100%;
+  margin-top: var(--space-3);
+  color: var(--text-muted);
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.genai-topic-details summary {
+  width: fit-content;
+  cursor: pointer;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.genai-topic-details summary::marker {
+  color: var(--accent);
+}
+
+.genai-topic-details ul {
+  margin: var(--space-3) 0 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.genai-topic-details li + li {
+  margin-top: var(--space-1);
+}
+
+.genai-topic-details li::marker {
+  color: var(--accent);
+}
+
 .footer-text {
   margin-top: var(--space-5);
   text-align: center;
@@ -2642,6 +2771,7 @@ html[data-theme="dark"] .hero-workshop-text {
   #navbar {
     gap: 0.45rem;
   }
+
   .nav-link {
     padding: 0.38rem 0.64rem;
     min-height: 32px;
